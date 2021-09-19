@@ -12,6 +12,7 @@ class AddAlarmScreen extends StatefulWidget {
 class _AddAlarmScreenState extends State<AddAlarmScreen> {
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -34,12 +35,44 @@ class _AddAlarmScreenState extends State<AddAlarmScreen> {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Text(
-            DateFormat('hh:mm').format(DateTime.now()),
-          )
-        ],
+      body: Container(
+        width: screenSize.width,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              DateFormat('hh:mm').format(DateTime.now()),
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                  backgroundColor: Colors.transparent),
+              onPressed: () {},
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color(0xffFFF4F6)),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.alarm,
+                        color: Color(0xffFE7388),
+                      ),
+                      Text(
+                        'Chọn giờ báo thức',
+                        style: TextStyle(color: Color(0xffFE7388)),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

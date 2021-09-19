@@ -1,331 +1,778 @@
-define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/sliver.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/rendering/proxy_box.dart'], (function load__packages__flutter__src__rendering__proxy_sliver_dart(dart_sdk, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__sliver$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__rendering__proxy_box$46dart) {
+define(['dart_sdk', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/scheduler/binding.dart'], (function load__packages__flutter__src__painting__image_stream_dart(dart_sdk, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__scheduler__binding$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
   const _interceptors = dart_sdk._interceptors;
+  const _internal = dart_sdk._internal;
+  const async = dart_sdk.async;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
-  const layer = packages__flutter__src__rendering__layer$46dart.src__rendering__layer;
-  const sliver = packages__flutter__src__rendering__sliver$46dart.src__rendering__sliver;
+  const debug = packages__flutter__src__foundation__debug$46dart.src__foundation__debug;
   const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const proxy_box = packages__flutter__src__rendering__proxy_box$46dart.src__rendering__proxy_box;
-  var proxy_sliver = Object.create(dart.library);
-  var $_equals = dartx._equals;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const binding = packages__flutter__src__scheduler__binding$46dart.src__scheduler__binding;
+  var image_stream = Object.create(dart.library);
+  var $length = dartx.length;
+  var $runtimeType = dartx.runtimeType;
+  var $forEach = dartx.forEach;
+  var $add = dartx.add;
+  var $_get = dartx._get;
+  var $removeAt = dartx.removeAt;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $isEmpty = dartx.isEmpty;
+  var $toList = dartx.toList;
+  var $clear = dartx.clear;
+  var $remove = dartx.remove;
+  var $map = dartx.map;
+  var $whereType = dartx.whereType;
+  var $truncate = dartx.truncate;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    OpacityLayerN: () => (T.OpacityLayerN = dart.constFn(dart.nullable(layer.OpacityLayer)))(),
-    DiagnosticsPropertyOfbool: () => (T.DiagnosticsPropertyOfbool = dart.constFn(diagnostics.DiagnosticsProperty$(core.bool)))(),
-    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))()
+    JSArrayOfImageStreamListener: () => (T.JSArrayOfImageStreamListener = dart.constFn(_interceptors.JSArray$(image_stream.ImageStreamListener)))(),
+    ObjectFlagPropertyOfImageStreamCompleter: () => (T.ObjectFlagPropertyOfImageStreamCompleter = dart.constFn(diagnostics.ObjectFlagProperty$(image_stream.ImageStreamCompleter)))(),
+    ListOfImageStreamListener: () => (T.ListOfImageStreamListener = dart.constFn(core.List$(image_stream.ImageStreamListener)))(),
+    ObjectFlagPropertyOfListOfImageStreamListener: () => (T.ObjectFlagPropertyOfListOfImageStreamListener = dart.constFn(diagnostics.ObjectFlagProperty$(T.ListOfImageStreamListener())))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    JSArrayOfVoidTovoid: () => (T.JSArrayOfVoidTovoid = dart.constFn(_interceptors.JSArray$(T.VoidTovoid())))(),
+    StackTraceN: () => (T.StackTraceN = dart.constFn(dart.nullable(core.StackTrace)))(),
+    ObjectAndStackTraceNTovoid: () => (T.ObjectAndStackTraceNTovoid = dart.constFn(dart.fnType(dart.void, [core.Object, T.StackTraceN()])))(),
+    ObjectAndStackTraceNToNvoid: () => (T.ObjectAndStackTraceNToNvoid = dart.constFn(dart.nullable(T.ObjectAndStackTraceNTovoid())))(),
+    ImageStreamListenerToFn: () => (T.ImageStreamListenerToFn = dart.constFn(dart.fnType(T.ObjectAndStackTraceNToNvoid(), [image_stream.ImageStreamListener])))(),
+    ImageChunkEventTovoid: () => (T.ImageChunkEventTovoid = dart.constFn(dart.fnType(dart.void, [image_stream.ImageChunkEvent])))(),
+    ImageChunkEventToNvoid: () => (T.ImageChunkEventToNvoid = dart.constFn(dart.nullable(T.ImageChunkEventTovoid())))(),
+    ImageStreamListenerToFn$1: () => (T.ImageStreamListenerToFn$1 = dart.constFn(dart.fnType(T.ImageChunkEventToNvoid(), [image_stream.ImageStreamListener])))(),
+    DiagnosticsPropertyOfImageInfo: () => (T.DiagnosticsPropertyOfImageInfo = dart.constFn(diagnostics.DiagnosticsProperty$(image_stream.ImageInfo)))(),
+    ObjectAndStackTraceToNull: () => (T.ObjectAndStackTraceToNull = dart.constFn(dart.fnType(core.Null, [core.Object, core.StackTrace])))()
   };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
   const CT = Object.create({
     _: () => (C, CT)
   });
+  var C = [];
   var I = [
-    "file:///C:/src/flutter/packages/flutter/lib/src/rendering/proxy_sliver.dart",
-    "package:flutter/src/rendering/proxy_sliver.dart"
+    "file:///D:/Program/Flutter/flutter/packages/flutter/lib/src/painting/image_stream.dart",
+    "package:flutter/src/painting/image_stream.dart"
   ];
-  const RenderSliver_RenderObjectWithChildMixin$36 = class RenderSliver_RenderObjectWithChildMixin extends sliver.RenderSliver {};
-  (RenderSliver_RenderObjectWithChildMixin$36.new = function() {
-    object.RenderObjectWithChildMixin$(sliver.RenderSliver)[dart.mixinNew].call(this);
-    RenderSliver_RenderObjectWithChildMixin$36.__proto__.new.call(this);
-  }).prototype = RenderSliver_RenderObjectWithChildMixin$36.prototype;
-  dart.applyMixin(RenderSliver_RenderObjectWithChildMixin$36, object.RenderObjectWithChildMixin$(sliver.RenderSliver));
-  proxy_sliver.RenderProxySliver = class RenderProxySliver extends RenderSliver_RenderObjectWithChildMixin$36 {
-    setupParentData(child) {
-      object.RenderObject.as(child);
-      if (!sliver.SliverPhysicalParentData.is(child.parentData)) child.parentData = new sliver.SliverPhysicalParentData.new();
+  var image$ = dart.privateName(image_stream, "ImageInfo.image");
+  var scale$ = dart.privateName(image_stream, "ImageInfo.scale");
+  var debugLabel$ = dart.privateName(image_stream, "ImageInfo.debugLabel");
+  image_stream.ImageInfo = class ImageInfo extends core.Object {
+    get image() {
+      return this[image$];
     }
-    performLayout() {
-      if (!(this.child != null)) dart.assertFailed(null, I[0], 51, 12, "child != null");
-      dart.nullCheck(this.child).layout(this.constraints, {parentUsesSize: true});
-      this.geometry = dart.nullCheck(this.child).geometry;
+    set image(value) {
+      super.image = value;
     }
-    paint(context, offset) {
-      if (this.child != null) context.paintChild(dart.nullCheck(this.child), offset);
+    get scale() {
+      return this[scale$];
     }
-    hitTestChildren(result, opts) {
-      let mainAxisPosition = opts && 'mainAxisPosition' in opts ? opts.mainAxisPosition : null;
-      let crossAxisPosition = opts && 'crossAxisPosition' in opts ? opts.crossAxisPosition : null;
-      return this.child != null && dart.nullCheck(dart.nullCheck(this.child).geometry).hitTestExtent > 0 && dart.nullCheck(this.child).hitTest(result, {mainAxisPosition: mainAxisPosition, crossAxisPosition: crossAxisPosition});
+    set scale(value) {
+      super.scale = value;
     }
-    childMainAxisPosition(child) {
-      sliver.RenderSliver.as(child);
-      if (!(child !== null)) dart.assertFailed(null, I[0], 75, 12, "child != null");
-      if (!child[$_equals](this.child)) dart.assertFailed(null, I[0], 76, 12, "child == this.child");
-      return 0.0;
+    get debugLabel() {
+      return this[debugLabel$];
     }
-    applyPaintTransform(child, transform) {
-      object.RenderObject.as(child);
-      if (!(child !== null)) dart.assertFailed(null, I[0], 82, 12, "child != null");
-      let childParentData = sliver.SliverPhysicalParentData.as(dart.nullCheck(child.parentData));
-      childParentData.applyPaintTransform(transform);
+    set debugLabel(value) {
+      super.debugLabel = value;
+    }
+    clone() {
+      return new image_stream.ImageInfo.new({image: this.image.clone(), scale: this.scale, debugLabel: this.debugLabel});
+    }
+    isCloneOf(other) {
+      if (other == null) dart.nullFailed(I[0], 88, 28, "other");
+      return dart.test(other.image.isCloneOf(this.image)) && this.scale == this.scale && other.debugLabel == this.debugLabel;
+    }
+    dispose() {
+      let t0, t0$;
+      if (!(dart.notNull((t0$ = (t0 = this.image.debugGetOpenHandleStackTraces(), t0 == null ? null : t0[$length]), t0$ == null ? 1 : t0$)) > 0)) dart.assertFailed(null, I[0], 122, 12, "(image.debugGetOpenHandleStackTraces()?.length ?? 1) > 0");
+      this.image.dispose();
+    }
+    toString() {
+      return (this.debugLabel != null ? dart.str(this.debugLabel) + " " : "") + dart.str(this.image) + " @ " + dart.str(debug.debugFormatDouble(this.scale)) + "x";
+    }
+    get hashCode() {
+      return ui.hashValues(this.image, this.scale, this.debugLabel);
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
+      return image_stream.ImageInfo.is(other) && dart.equals(other.image, this.image) && other.scale == this.scale && other.debugLabel == this.debugLabel;
     }
   };
-  (proxy_sliver.RenderProxySliver.new = function(child = null) {
-    proxy_sliver.RenderProxySliver.__proto__.new.call(this);
-    this.child = child;
-  }).prototype = proxy_sliver.RenderProxySliver.prototype;
-  dart.addTypeTests(proxy_sliver.RenderProxySliver);
-  dart.addTypeCaches(proxy_sliver.RenderProxySliver);
-  dart.setMethodSignature(proxy_sliver.RenderProxySliver, () => ({
-    __proto__: dart.getMethods(proxy_sliver.RenderProxySliver.__proto__),
-    performLayout: dart.fnType(dart.void, [])
+  (image_stream.ImageInfo.new = function(opts) {
+    let image = opts && 'image' in opts ? opts.image : null;
+    if (image == null) dart.nullFailed(I[0], 27, 35, "image");
+    let scale = opts && 'scale' in opts ? opts.scale : 1;
+    if (scale == null) dart.nullFailed(I[0], 27, 47, "scale");
+    let debugLabel = opts && 'debugLabel' in opts ? opts.debugLabel : null;
+    this[image$] = image;
+    this[scale$] = scale;
+    this[debugLabel$] = debugLabel;
+    if (!(image != null)) dart.assertFailed(null, I[0], 28, 14, "image != null");
+    if (!(scale != null)) dart.assertFailed(null, I[0], 29, 14, "scale != null");
+    ;
+  }).prototype = image_stream.ImageInfo.prototype;
+  dart.addTypeTests(image_stream.ImageInfo);
+  dart.addTypeCaches(image_stream.ImageInfo);
+  dart.setMethodSignature(image_stream.ImageInfo, () => ({
+    __proto__: dart.getMethods(image_stream.ImageInfo.__proto__),
+    clone: dart.fnType(image_stream.ImageInfo, []),
+    isCloneOf: dart.fnType(core.bool, [image_stream.ImageInfo]),
+    dispose: dart.fnType(dart.void, [])
   }));
-  dart.setLibraryUri(proxy_sliver.RenderProxySliver, I[1]);
-  var _opacity = dart.privateName(proxy_sliver, "_opacity");
-  var _alwaysIncludeSemantics = dart.privateName(proxy_sliver, "_alwaysIncludeSemantics");
-  var _alpha = dart.privateName(proxy_sliver, "_alpha");
-  proxy_sliver.RenderSliverOpacity = class RenderSliverOpacity extends proxy_sliver.RenderProxySliver {
-    get alwaysNeedsCompositing() {
-      return this.child != null && this[_alpha] !== 0 && this[_alpha] !== 255;
+  dart.setLibraryUri(image_stream.ImageInfo, I[1]);
+  dart.setFieldSignature(image_stream.ImageInfo, () => ({
+    __proto__: dart.getFields(image_stream.ImageInfo.__proto__),
+    image: dart.finalFieldType(ui.Image),
+    scale: dart.finalFieldType(core.double),
+    debugLabel: dart.finalFieldType(dart.nullable(core.String))
+  }));
+  dart.defineExtensionMethods(image_stream.ImageInfo, ['toString', '_equals']);
+  dart.defineExtensionAccessors(image_stream.ImageInfo, ['hashCode']);
+  var onImage$ = dart.privateName(image_stream, "ImageStreamListener.onImage");
+  var onChunk$ = dart.privateName(image_stream, "ImageStreamListener.onChunk");
+  var onError$ = dart.privateName(image_stream, "ImageStreamListener.onError");
+  image_stream.ImageStreamListener = class ImageStreamListener extends core.Object {
+    get onImage() {
+      return this[onImage$];
     }
-    get opacity() {
-      return this[_opacity];
+    set onImage(value) {
+      super.onImage = value;
     }
-    set opacity(value) {
-      if (!(value !== null)) dart.assertFailed(null, I[0], 132, 12, "value != null");
-      if (!(value >= 0.0 && value <= 1.0)) dart.assertFailed(null, I[0], 133, 12, "value >= 0.0 && value <= 1.0");
-      if (this[_opacity] === value) return;
-      let didNeedCompositing = this.alwaysNeedsCompositing;
-      let wasVisible = this[_alpha] !== 0;
-      this[_opacity] = value;
-      this[_alpha] = ui.Color.getAlphaFromOpacity(this[_opacity]);
-      if (didNeedCompositing !== this.alwaysNeedsCompositing) this.markNeedsCompositingBitsUpdate();
-      this.markNeedsPaint();
-      if (wasVisible !== (this[_alpha] !== 0) && !this.alwaysIncludeSemantics) this.markNeedsSemanticsUpdate();
+    get onChunk() {
+      return this[onChunk$];
     }
-    get alwaysIncludeSemantics() {
-      return this[_alwaysIncludeSemantics];
+    set onChunk(value) {
+      super.onChunk = value;
     }
-    set alwaysIncludeSemantics(value) {
-      if (value === this[_alwaysIncludeSemantics]) return;
-      this[_alwaysIncludeSemantics] = value;
-      this.markNeedsSemanticsUpdate();
+    get onError() {
+      return this[onError$];
     }
-    paint(context, offset) {
-      if (this.child != null && dart.nullCheck(dart.nullCheck(this.child).geometry).visible) {
-        if (this[_alpha] === 0) {
-          this.layer = null;
-          return;
-        }
-        if (this[_alpha] === 255) {
-          this.layer = null;
-          context.paintChild(dart.nullCheck(this.child), offset);
-          return;
-        }
-        if (!this.needsCompositing) dart.assertFailed(null, I[0], 175, 14, "needsCompositing");
-        this.layer = context.pushOpacity(offset, this[_alpha], dart.bind(this, 'paint', super.paint), {oldLayer: T.OpacityLayerN().as(this.layer)});
+    set onError(value) {
+      super.onError = value;
+    }
+    get hashCode() {
+      return ui.hashValues(this.onImage, this.onChunk, this.onError);
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
+      return image_stream.ImageStreamListener.is(other) && dart.equals(other.onImage, this.onImage) && dart.equals(other.onChunk, this.onChunk) && dart.equals(other.onError, this.onError);
+    }
+  };
+  (image_stream.ImageStreamListener.new = function(onImage, opts) {
+    if (onImage == null) dart.nullFailed(I[0], 159, 10, "onImage");
+    let onChunk = opts && 'onChunk' in opts ? opts.onChunk : null;
+    let onError = opts && 'onError' in opts ? opts.onError : null;
+    this[onImage$] = onImage;
+    this[onChunk$] = onChunk;
+    this[onError$] = onError;
+    if (!(onImage != null)) dart.assertFailed(null, I[0], 162, 15, "onImage != null");
+    ;
+  }).prototype = image_stream.ImageStreamListener.prototype;
+  dart.addTypeTests(image_stream.ImageStreamListener);
+  dart.addTypeCaches(image_stream.ImageStreamListener);
+  dart.setLibraryUri(image_stream.ImageStreamListener, I[1]);
+  dart.setFieldSignature(image_stream.ImageStreamListener, () => ({
+    __proto__: dart.getFields(image_stream.ImageStreamListener.__proto__),
+    onImage: dart.finalFieldType(dart.fnType(dart.void, [image_stream.ImageInfo, core.bool])),
+    onChunk: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [image_stream.ImageChunkEvent]))),
+    onError: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.Object, dart.nullable(core.StackTrace)])))
+  }));
+  dart.defineExtensionMethods(image_stream.ImageStreamListener, ['_equals']);
+  dart.defineExtensionAccessors(image_stream.ImageStreamListener, ['hashCode']);
+  var cumulativeBytesLoaded$ = dart.privateName(image_stream, "ImageChunkEvent.cumulativeBytesLoaded");
+  var expectedTotalBytes$ = dart.privateName(image_stream, "ImageChunkEvent.expectedTotalBytes");
+  const Object_Diagnosticable$36 = class Object_Diagnosticable extends core.Object {};
+  (Object_Diagnosticable$36.new = function() {
+  }).prototype = Object_Diagnosticable$36.prototype;
+  dart.applyMixin(Object_Diagnosticable$36, diagnostics.Diagnosticable);
+  image_stream.ImageChunkEvent = class ImageChunkEvent extends Object_Diagnosticable$36 {
+    get cumulativeBytesLoaded() {
+      return this[cumulativeBytesLoaded$];
+    }
+    set cumulativeBytesLoaded(value) {
+      super.cumulativeBytesLoaded = value;
+    }
+    get expectedTotalBytes() {
+      return this[expectedTotalBytes$];
+    }
+    set expectedTotalBytes(value) {
+      super.expectedTotalBytes = value;
+    }
+    debugFillProperties(properties) {
+      if (properties == null) dart.nullFailed(I[0], 275, 56, "properties");
+      super.debugFillProperties(properties);
+      properties.add(new diagnostics.IntProperty.new("cumulativeBytesLoaded", this.cumulativeBytesLoaded));
+      properties.add(new diagnostics.IntProperty.new("expectedTotalBytes", this.expectedTotalBytes));
+    }
+  };
+  (image_stream.ImageChunkEvent.new = function(opts) {
+    let cumulativeBytesLoaded = opts && 'cumulativeBytesLoaded' in opts ? opts.cumulativeBytesLoaded : null;
+    if (cumulativeBytesLoaded == null) dart.nullFailed(I[0], 253, 19, "cumulativeBytesLoaded");
+    let expectedTotalBytes = opts && 'expectedTotalBytes' in opts ? opts.expectedTotalBytes : null;
+    this[cumulativeBytesLoaded$] = cumulativeBytesLoaded;
+    this[expectedTotalBytes$] = expectedTotalBytes;
+    if (!(dart.notNull(cumulativeBytesLoaded) >= 0)) dart.assertFailed(null, I[0], 255, 15, "cumulativeBytesLoaded >= 0");
+    if (!(expectedTotalBytes == null || dart.notNull(expectedTotalBytes) >= 0)) dart.assertFailed(null, I[0], 256, 15, "expectedTotalBytes == null || expectedTotalBytes >= 0");
+    ;
+  }).prototype = image_stream.ImageChunkEvent.prototype;
+  dart.addTypeTests(image_stream.ImageChunkEvent);
+  dart.addTypeCaches(image_stream.ImageChunkEvent);
+  dart.setLibraryUri(image_stream.ImageChunkEvent, I[1]);
+  dart.setFieldSignature(image_stream.ImageChunkEvent, () => ({
+    __proto__: dart.getFields(image_stream.ImageChunkEvent.__proto__),
+    cumulativeBytesLoaded: dart.finalFieldType(core.int),
+    expectedTotalBytes: dart.finalFieldType(dart.nullable(core.int))
+  }));
+  var _completer$ = dart.privateName(image_stream, "_completer");
+  var _listeners = dart.privateName(image_stream, "_listeners");
+  const Object_Diagnosticable$36$ = class Object_Diagnosticable extends core.Object {};
+  (Object_Diagnosticable$36$.new = function() {
+  }).prototype = Object_Diagnosticable$36$.prototype;
+  dart.applyMixin(Object_Diagnosticable$36$, diagnostics.Diagnosticable);
+  image_stream.ImageStream = class ImageStream extends Object_Diagnosticable$36$ {
+    get completer() {
+      return this[_completer$];
+    }
+    setCompleter(value) {
+      if (value == null) dart.nullFailed(I[0], 325, 42, "value");
+      if (!(this[_completer$] == null)) dart.assertFailed(null, I[0], 326, 12, "_completer == null");
+      this[_completer$] = value;
+      if (this[_listeners] != null) {
+        let initialListeners = dart.nullCheck(this[_listeners]);
+        this[_listeners] = null;
+        initialListeners[$forEach](dart.bind(dart.nullCheck(this[_completer$]), 'addListener'));
       }
     }
-    visitChildrenForSemantics(visitor) {
-      if (this.child != null && (this[_alpha] !== 0 || this.alwaysIncludeSemantics)) visitor(dart.nullCheck(this.child));
+    addListener(listener) {
+      if (listener == null) dart.nullFailed(I[0], 356, 40, "listener");
+      if (this[_completer$] != null) return dart.nullCheck(this[_completer$]).addListener(listener);
+      this[_listeners] == null ? this[_listeners] = T.JSArrayOfImageStreamListener().of([]) : null;
+      dart.nullCheck(this[_listeners])[$add](listener);
     }
-    debugFillProperties(properties) {
-      super.debugFillProperties(properties);
-      properties.add(new diagnostics.DoubleProperty.new("opacity", this.opacity));
-      properties.add(new diagnostics.FlagProperty.new("alwaysIncludeSemantics", {value: this.alwaysIncludeSemantics, ifTrue: "alwaysIncludeSemantics"}));
+    removeListener(listener) {
+      if (listener == null) dart.nullFailed(I[0], 367, 43, "listener");
+      if (this[_completer$] != null) return dart.nullCheck(this[_completer$]).removeListener(listener);
+      if (!(this[_listeners] != null)) dart.assertFailed(null, I[0], 370, 12, "_listeners != null");
+      for (let i = 0; i < dart.notNull(dart.nullCheck(this[_listeners])[$length]); i = i + 1) {
+        if (dart.equals(dart.nullCheck(this[_listeners])[$_get](i), listener)) {
+          dart.nullCheck(this[_listeners])[$removeAt](i);
+          break;
+        }
+      }
     }
-  };
-  (proxy_sliver.RenderSliverOpacity.new = function(opts) {
-    let opacity = opts && 'opacity' in opts ? opts.opacity : 1;
-    let alwaysIncludeSemantics = opts && 'alwaysIncludeSemantics' in opts ? opts.alwaysIncludeSemantics : false;
-    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
-    if (!(opacity !== null && opacity >= 0.0 && opacity <= 1.0)) dart.assertFailed(null, I[0], 106, 15, "opacity != null && opacity >= 0.0 && opacity <= 1.0");
-    if (!(alwaysIncludeSemantics !== null)) dart.assertFailed(null, I[0], 107, 15, "alwaysIncludeSemantics != null");
-    this[_opacity] = opacity;
-    this[_alwaysIncludeSemantics] = alwaysIncludeSemantics;
-    this[_alpha] = ui.Color.getAlphaFromOpacity(opacity);
-    proxy_sliver.RenderSliverOpacity.__proto__.new.call(this);
-    this.child = sliver;
-  }).prototype = proxy_sliver.RenderSliverOpacity.prototype;
-  dart.addTypeTests(proxy_sliver.RenderSliverOpacity);
-  dart.addTypeCaches(proxy_sliver.RenderSliverOpacity);
-  dart.setGetterSignature(proxy_sliver.RenderSliverOpacity, () => ({
-    __proto__: dart.getGetters(proxy_sliver.RenderSliverOpacity.__proto__),
-    opacity: core.double,
-    alwaysIncludeSemantics: core.bool
-  }));
-  dart.setSetterSignature(proxy_sliver.RenderSliverOpacity, () => ({
-    __proto__: dart.getSetters(proxy_sliver.RenderSliverOpacity.__proto__),
-    opacity: core.double,
-    alwaysIncludeSemantics: core.bool
-  }));
-  dart.setLibraryUri(proxy_sliver.RenderSliverOpacity, I[1]);
-  dart.setFieldSignature(proxy_sliver.RenderSliverOpacity, () => ({
-    __proto__: dart.getFields(proxy_sliver.RenderSliverOpacity.__proto__),
-    [_alpha]: dart.fieldType(core.int),
-    [_opacity]: dart.fieldType(core.double),
-    [_alwaysIncludeSemantics]: dart.fieldType(core.bool)
-  }));
-  var _ignoring = dart.privateName(proxy_sliver, "_ignoring");
-  var _ignoringSemantics = dart.privateName(proxy_sliver, "_ignoringSemantics");
-  var _effectiveIgnoringSemantics = dart.privateName(proxy_sliver, "_effectiveIgnoringSemantics");
-  proxy_sliver.RenderSliverIgnorePointer = class RenderSliverIgnorePointer extends proxy_sliver.RenderProxySliver {
-    get ignoring() {
-      return this[_ignoring];
-    }
-    set ignoring(value) {
-      if (!(value !== null)) dart.assertFailed(null, I[0], 231, 12, "value != null");
-      if (value === this[_ignoring]) return;
-      this[_ignoring] = value;
-      if (this[_ignoringSemantics] == null || !dart.nullCheck(this[_ignoringSemantics])) this.markNeedsSemanticsUpdate();
-    }
-    get ignoringSemantics() {
-      return this[_ignoringSemantics];
-    }
-    set ignoringSemantics(value) {
-      if (value == this[_ignoringSemantics]) return;
-      let oldEffectiveValue = this[_effectiveIgnoringSemantics];
-      this[_ignoringSemantics] = value;
-      if (oldEffectiveValue !== this[_effectiveIgnoringSemantics]) this.markNeedsSemanticsUpdate();
-    }
-    get [_effectiveIgnoringSemantics]() {
+    get key() {
       let t0;
-      t0 = this.ignoringSemantics;
-      return t0 == null ? this.ignoring : t0;
-    }
-    hitTest(result, opts) {
-      let mainAxisPosition = opts && 'mainAxisPosition' in opts ? opts.mainAxisPosition : null;
-      let crossAxisPosition = opts && 'crossAxisPosition' in opts ? opts.crossAxisPosition : null;
-      return !this.ignoring && super.hitTest(result, {mainAxisPosition: mainAxisPosition, crossAxisPosition: crossAxisPosition});
-    }
-    visitChildrenForSemantics(visitor) {
-      if (this.child != null && !this[_effectiveIgnoringSemantics]) visitor(dart.nullCheck(this.child));
+      t0 = this[_completer$];
+      return t0 == null ? this : t0;
     }
     debugFillProperties(properties) {
+      let t0, t0$, t0$0, t0$1;
+      if (properties == null) dart.nullFailed(I[0], 393, 56, "properties");
       super.debugFillProperties(properties);
-      properties.add(new (T.DiagnosticsPropertyOfbool()).new("ignoring", this.ignoring));
-      properties.add(new (T.DiagnosticsPropertyOfbool()).new("ignoringSemantics", this[_effectiveIgnoringSemantics], {description: this.ignoringSemantics == null ? "implicitly " + dart.str(this[_effectiveIgnoringSemantics]) : null}));
+      properties.add(new (T.ObjectFlagPropertyOfImageStreamCompleter()).new("completer", this[_completer$], {ifPresent: (t0 = this[_completer$], t0 == null ? null : t0.toStringShort()), ifNull: "unresolved"}));
+      properties.add(new (T.ObjectFlagPropertyOfListOfImageStreamListener()).new("listeners", this[_listeners], {ifPresent: dart.str((t0$ = this[_listeners], t0$ == null ? null : t0$[$length])) + " listener" + ((t0$0 = this[_listeners], t0$0 == null ? null : t0$0[$length]) === 1 ? "" : "s"), ifNull: "no listeners", level: this[_completer$] != null ? diagnostics.DiagnosticLevel.hidden : diagnostics.DiagnosticLevel.info}));
+      t0$1 = this[_completer$];
+      t0$1 == null ? null : t0$1.debugFillProperties(properties);
     }
   };
-  (proxy_sliver.RenderSliverIgnorePointer.new = function(opts) {
-    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
-    let ignoring = opts && 'ignoring' in opts ? opts.ignoring : true;
-    let ignoringSemantics = opts && 'ignoringSemantics' in opts ? opts.ignoringSemantics : null;
-    if (!(ignoring !== null)) dart.assertFailed(null, I[0], 218, 15, "ignoring != null");
-    this[_ignoring] = ignoring;
-    this[_ignoringSemantics] = ignoringSemantics;
-    proxy_sliver.RenderSliverIgnorePointer.__proto__.new.call(this);
-    this.child = sliver;
-  }).prototype = proxy_sliver.RenderSliverIgnorePointer.prototype;
-  dart.addTypeTests(proxy_sliver.RenderSliverIgnorePointer);
-  dart.addTypeCaches(proxy_sliver.RenderSliverIgnorePointer);
-  dart.setGetterSignature(proxy_sliver.RenderSliverIgnorePointer, () => ({
-    __proto__: dart.getGetters(proxy_sliver.RenderSliverIgnorePointer.__proto__),
-    ignoring: core.bool,
-    ignoringSemantics: dart.nullable(core.bool),
-    [_effectiveIgnoringSemantics]: core.bool
+  (image_stream.ImageStream.new = function() {
+    this[_completer$] = null;
+    this[_listeners] = null;
+    ;
+  }).prototype = image_stream.ImageStream.prototype;
+  dart.addTypeTests(image_stream.ImageStream);
+  dart.addTypeCaches(image_stream.ImageStream);
+  dart.setMethodSignature(image_stream.ImageStream, () => ({
+    __proto__: dart.getMethods(image_stream.ImageStream.__proto__),
+    setCompleter: dart.fnType(dart.void, [image_stream.ImageStreamCompleter]),
+    addListener: dart.fnType(dart.void, [image_stream.ImageStreamListener]),
+    removeListener: dart.fnType(dart.void, [image_stream.ImageStreamListener])
   }));
-  dart.setSetterSignature(proxy_sliver.RenderSliverIgnorePointer, () => ({
-    __proto__: dart.getSetters(proxy_sliver.RenderSliverIgnorePointer.__proto__),
-    ignoring: core.bool,
-    ignoringSemantics: dart.nullable(core.bool)
+  dart.setGetterSignature(image_stream.ImageStream, () => ({
+    __proto__: dart.getGetters(image_stream.ImageStream.__proto__),
+    completer: dart.nullable(image_stream.ImageStreamCompleter),
+    key: core.Object
   }));
-  dart.setLibraryUri(proxy_sliver.RenderSliverIgnorePointer, I[1]);
-  dart.setFieldSignature(proxy_sliver.RenderSliverIgnorePointer, () => ({
-    __proto__: dart.getFields(proxy_sliver.RenderSliverIgnorePointer.__proto__),
-    [_ignoring]: dart.fieldType(core.bool),
-    [_ignoringSemantics]: dart.fieldType(dart.nullable(core.bool))
+  dart.setLibraryUri(image_stream.ImageStream, I[1]);
+  dart.setFieldSignature(image_stream.ImageStream, () => ({
+    __proto__: dart.getFields(image_stream.ImageStream.__proto__),
+    [_completer$]: dart.fieldType(dart.nullable(image_stream.ImageStreamCompleter)),
+    [_listeners]: dart.fieldType(dart.nullable(core.List$(image_stream.ImageStreamListener)))
   }));
-  var _offstage = dart.privateName(proxy_sliver, "_offstage");
-  proxy_sliver.RenderSliverOffstage = class RenderSliverOffstage extends proxy_sliver.RenderProxySliver {
-    get offstage() {
-      return this[_offstage];
-    }
-    set offstage(value) {
-      if (!(value !== null)) dart.assertFailed(null, I[0], 306, 12, "value != null");
-      if (value === this[_offstage]) return;
-      this[_offstage] = value;
-      this.markNeedsLayoutForSizedByParentChange();
-    }
-    performLayout() {
-      if (!(this.child != null)) dart.assertFailed(null, I[0], 315, 12, "child != null");
-      dart.nullCheck(this.child).layout(this.constraints, {parentUsesSize: true});
-      if (!this.offstage)
-        this.geometry = dart.nullCheck(this.child).geometry;
-      else
-        this.geometry = sliver.SliverGeometry.zero;
-    }
-    hitTest(result, opts) {
-      let mainAxisPosition = opts && 'mainAxisPosition' in opts ? opts.mainAxisPosition : null;
-      let crossAxisPosition = opts && 'crossAxisPosition' in opts ? opts.crossAxisPosition : null;
-      return !this.offstage && super.hitTest(result, {mainAxisPosition: mainAxisPosition, crossAxisPosition: crossAxisPosition});
-    }
-    hitTestChildren(result, opts) {
-      let mainAxisPosition = opts && 'mainAxisPosition' in opts ? opts.mainAxisPosition : null;
-      let crossAxisPosition = opts && 'crossAxisPosition' in opts ? opts.crossAxisPosition : null;
-      return !this.offstage && this.child != null && dart.nullCheck(dart.nullCheck(this.child).geometry).hitTestExtent > 0 && dart.nullCheck(this.child).hitTest(result, {mainAxisPosition: mainAxisPosition, crossAxisPosition: crossAxisPosition});
-    }
-    paint(context, offset) {
-      if (this.offstage) return;
-      context.paintChild(dart.nullCheck(this.child), offset);
-    }
-    visitChildrenForSemantics(visitor) {
-      if (this.offstage) return;
-      super.visitChildrenForSemantics(visitor);
-    }
-    debugFillProperties(properties) {
-      super.debugFillProperties(properties);
-      properties.add(new (T.DiagnosticsPropertyOfbool()).new("offstage", this.offstage));
-    }
-    debugDescribeChildren() {
-      if (this.child == null) return T.JSArrayOfDiagnosticsNode().of([]);
-      return T.JSArrayOfDiagnosticsNode().of([dart.nullCheck(this.child).toDiagnosticsNode({name: "child", style: this.offstage ? diagnostics.DiagnosticsTreeStyle.offstage : diagnostics.DiagnosticsTreeStyle.sparse})]);
+  var _keepAliveHandles = dart.privateName(image_stream, "_keepAliveHandles");
+  var _disposed = dart.privateName(image_stream, "_disposed");
+  var _maybeDispose = dart.privateName(image_stream, "_maybeDispose");
+  image_stream.ImageStreamCompleterHandle = class ImageStreamCompleterHandle extends core.Object {
+    dispose() {
+      let t0;
+      if (!(this[_completer$] != null)) dart.assertFailed(null, I[0], 433, 12, "_completer != null");
+      if (!(dart.notNull(dart.nullCheck(this[_completer$])[_keepAliveHandles]) > 0)) dart.assertFailed(null, I[0], 434, 12, "_completer!._keepAliveHandles > 0");
+      if (!!dart.test(dart.nullCheck(this[_completer$])[_disposed])) dart.assertFailed(null, I[0], 435, 12, "!_completer!._disposed");
+      t0 = dart.nullCheck(this[_completer$]);
+      t0[_keepAliveHandles] = dart.notNull(t0[_keepAliveHandles]) - 1;
+      dart.nullCheck(this[_completer$])[_maybeDispose]();
+      this[_completer$] = null;
     }
   };
-  (proxy_sliver.RenderSliverOffstage.new = function(opts) {
-    let offstage = opts && 'offstage' in opts ? opts.offstage : true;
-    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
-    if (!(offstage !== null)) dart.assertFailed(null, I[0], 290, 15, "offstage != null");
-    this[_offstage] = offstage;
-    proxy_sliver.RenderSliverOffstage.__proto__.new.call(this);
-    this.child = sliver;
-  }).prototype = proxy_sliver.RenderSliverOffstage.prototype;
-  dart.addTypeTests(proxy_sliver.RenderSliverOffstage);
-  dart.addTypeCaches(proxy_sliver.RenderSliverOffstage);
-  dart.setGetterSignature(proxy_sliver.RenderSliverOffstage, () => ({
-    __proto__: dart.getGetters(proxy_sliver.RenderSliverOffstage.__proto__),
-    offstage: core.bool
+  (image_stream.ImageStreamCompleterHandle.__ = function(_completer) {
+    let t0;
+    if (_completer == null) dart.nullFailed(I[0], 422, 58, "_completer");
+    this[_completer$] = _completer;
+    t0 = dart.nullCheck(this[_completer$]);
+    t0[_keepAliveHandles] = dart.notNull(t0[_keepAliveHandles]) + 1;
+  }).prototype = image_stream.ImageStreamCompleterHandle.prototype;
+  dart.addTypeTests(image_stream.ImageStreamCompleterHandle);
+  dart.addTypeCaches(image_stream.ImageStreamCompleterHandle);
+  dart.setMethodSignature(image_stream.ImageStreamCompleterHandle, () => ({
+    __proto__: dart.getMethods(image_stream.ImageStreamCompleterHandle.__proto__),
+    dispose: dart.fnType(dart.void, [])
   }));
-  dart.setSetterSignature(proxy_sliver.RenderSliverOffstage, () => ({
-    __proto__: dart.getSetters(proxy_sliver.RenderSliverOffstage.__proto__),
-    offstage: core.bool
+  dart.setLibraryUri(image_stream.ImageStreamCompleterHandle, I[1]);
+  dart.setFieldSignature(image_stream.ImageStreamCompleterHandle, () => ({
+    __proto__: dart.getFields(image_stream.ImageStreamCompleterHandle.__proto__),
+    [_completer$]: dart.fieldType(dart.nullable(image_stream.ImageStreamCompleter))
   }));
-  dart.setLibraryUri(proxy_sliver.RenderSliverOffstage, I[1]);
-  dart.setFieldSignature(proxy_sliver.RenderSliverOffstage, () => ({
-    __proto__: dart.getFields(proxy_sliver.RenderSliverOffstage.__proto__),
-    [_offstage]: dart.fieldType(core.bool)
+  var debugLabel = dart.privateName(image_stream, "ImageStreamCompleter.debugLabel");
+  var _currentImage = dart.privateName(image_stream, "_currentImage");
+  var _currentError = dart.privateName(image_stream, "_currentError");
+  var _hadAtLeastOneListener = dart.privateName(image_stream, "_hadAtLeastOneListener");
+  var _onLastListenerRemovedCallbacks = dart.privateName(image_stream, "_onLastListenerRemovedCallbacks");
+  var _checkDisposed = dart.privateName(image_stream, "_checkDisposed");
+  const Object_Diagnosticable$36$0 = class Object_Diagnosticable extends core.Object {};
+  (Object_Diagnosticable$36$0.new = function() {
+  }).prototype = Object_Diagnosticable$36$0.prototype;
+  dart.applyMixin(Object_Diagnosticable$36$0, diagnostics.Diagnosticable);
+  image_stream.ImageStreamCompleter = class ImageStreamCompleter extends Object_Diagnosticable$36$0 {
+    get debugLabel() {
+      return this[debugLabel];
+    }
+    set debugLabel(value) {
+      this[debugLabel] = value;
+    }
+    get hasListeners() {
+      return this[_listeners][$isNotEmpty];
+    }
+    addListener(listener) {
+      let t2, t1, t0;
+      if (listener == null) dart.nullFailed(I[0], 489, 40, "listener");
+      this[_checkDisposed]();
+      this[_hadAtLeastOneListener] = true;
+      this[_listeners][$add](listener);
+      if (this[_currentImage] != null) {
+        try {
+          t0 = listener;
+          t1 = dart.nullCheck(this[_currentImage]).clone();
+          t2 = true;
+          t0.onImage(t1, t2);
+        } catch (e) {
+          let exception = dart.getThrown(e);
+          let stack = dart.stackTrace(e);
+          if (core.Object.is(exception)) {
+            this.reportError({context: new assertions.ErrorDescription.new("by a synchronously-called image listener"), exception: exception, stack: stack});
+          } else
+            throw e;
+        }
+      }
+      if (this[_currentError] != null && listener.onError != null) {
+        try {
+          dart.nullCheck(listener.onError)(dart.nullCheck(this[_currentError]).exception, dart.nullCheck(this[_currentError]).stack);
+        } catch (e$) {
+          let exception = dart.getThrown(e$);
+          let stack = dart.stackTrace(e$);
+          if (core.Object.is(exception)) {
+            assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: exception, library: "image resource service", context: new assertions.ErrorDescription.new("by a synchronously-called image error listener"), stack: stack}));
+          } else
+            throw e$;
+        }
+      }
+    }
+    keepAlive() {
+      this[_checkDisposed]();
+      return new image_stream.ImageStreamCompleterHandle.__(this);
+    }
+    removeListener(listener) {
+      if (listener == null) dart.nullFailed(I[0], 541, 43, "listener");
+      this[_checkDisposed]();
+      for (let i = 0; i < dart.notNull(this[_listeners][$length]); i = i + 1) {
+        if (dart.equals(this[_listeners][$_get](i), listener)) {
+          this[_listeners][$removeAt](i);
+          break;
+        }
+      }
+      if (dart.test(this[_listeners][$isEmpty])) {
+        let callbacks = this[_onLastListenerRemovedCallbacks][$toList]();
+        for (let callback of callbacks) {
+          callback();
+        }
+        this[_onLastListenerRemovedCallbacks][$clear]();
+        this[_maybeDispose]();
+      }
+    }
+    [_maybeDispose]() {
+      let t2;
+      if (!dart.test(this[_hadAtLeastOneListener]) || dart.test(this[_disposed]) || dart.test(this[_listeners][$isNotEmpty]) || this[_keepAliveHandles] !== 0) {
+        return;
+      }
+      t2 = this[_currentImage];
+      t2 == null ? null : t2.dispose();
+      this[_currentImage] = null;
+      this[_disposed] = true;
+    }
+    [_checkDisposed]() {
+      if (dart.test(this[_disposed])) {
+        dart.throw(new core.StateError.new("Stream has been disposed.\n" + "An ImageStream is considered disposed once at least one listener has " + "been added and subsequently all listeners have been removed and no " + "handles are outstanding from the keepAlive method.\n" + "To resolve this error, maintain at least one listener on the stream, " + "or create an ImageStreamCompleterHandle from the keepAlive " + "method, or create a new stream for the image."));
+      }
+    }
+    addOnLastListenerRemovedCallback(callback) {
+      if (callback == null) dart.nullFailed(I[0], 590, 54, "callback");
+      if (!(callback != null)) dart.assertFailed(null, I[0], 591, 12, "callback != null");
+      this[_checkDisposed]();
+      this[_onLastListenerRemovedCallbacks][$add](callback);
+    }
+    removeOnLastListenerRemovedCallback(callback) {
+      if (callback == null) dart.nullFailed(I[0], 598, 57, "callback");
+      if (!(callback != null)) dart.assertFailed(null, I[0], 599, 12, "callback != null");
+      this[_checkDisposed]();
+      this[_onLastListenerRemovedCallbacks][$remove](callback);
+    }
+    setImage(image) {
+      let t2, t4, t3, t2$;
+      if (image == null) dart.nullFailed(I[0], 606, 27, "image");
+      this[_checkDisposed]();
+      t2 = this[_currentImage];
+      t2 == null ? null : t2.dispose();
+      this[_currentImage] = image;
+      if (dart.test(this[_listeners][$isEmpty])) return;
+      let localListeners = T.ListOfImageStreamListener().from(this[_listeners]);
+      for (let listener of localListeners) {
+        try {
+          t2$ = listener;
+          t3 = image.clone();
+          t4 = false;
+          t2$.onImage(t3, t4);
+        } catch (e) {
+          let exception = dart.getThrown(e);
+          let stack = dart.stackTrace(e);
+          if (core.Object.is(exception)) {
+            this.reportError({context: new assertions.ErrorDescription.new("by an image listener"), exception: exception, stack: stack});
+          } else
+            throw e;
+        }
+      }
+    }
+    reportError(opts) {
+      let context = opts && 'context' in opts ? opts.context : null;
+      let exception = opts && 'exception' in opts ? opts.exception : null;
+      if (exception == null) dart.nullFailed(I[0], 660, 21, "exception");
+      let stack = opts && 'stack' in opts ? opts.stack : null;
+      let informationCollector = opts && 'informationCollector' in opts ? opts.informationCollector : null;
+      let silent = opts && 'silent' in opts ? opts.silent : false;
+      if (silent == null) dart.nullFailed(I[0], 663, 10, "silent");
+      this[_currentError] = new assertions.FlutterErrorDetails.new({exception: exception, stack: stack, library: "image resource service", context: context, informationCollector: informationCollector, silent: silent});
+      let localErrorListeners = this[_listeners][$map](T.ObjectAndStackTraceNToNvoid(), dart.fn(listener => {
+        if (listener == null) dart.nullFailed(I[0], 676, 56, "listener");
+        return listener.onError;
+      }, T.ImageStreamListenerToFn()))[$whereType](T.ObjectAndStackTraceNTovoid())[$toList]();
+      if (dart.test(localErrorListeners[$isEmpty])) {
+        assertions.FlutterError.reportError(dart.nullCheck(this[_currentError]));
+      } else {
+        for (let errorListener of localErrorListeners) {
+          try {
+            errorListener(exception, stack);
+          } catch (e) {
+            let exception = dart.getThrown(e);
+            let stack = dart.stackTrace(e);
+            if (core.Object.is(exception)) {
+              assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({context: new assertions.ErrorDescription.new("when reporting an error to an image listener"), library: "image resource service", exception: exception, stack: stack}));
+            } else
+              throw e;
+          }
+        }
+      }
+    }
+    reportImageChunkEvent(event) {
+      if (event == null) dart.nullFailed(I[0], 704, 46, "event");
+      this[_checkDisposed]();
+      if (dart.test(this.hasListeners)) {
+        let localListeners = this[_listeners][$map](T.ImageChunkEventToNvoid(), dart.fn(listener => {
+          if (listener == null) dart.nullFailed(I[0], 709, 58, "listener");
+          return listener.onChunk;
+        }, T.ImageStreamListenerToFn$1()))[$whereType](T.ImageChunkEventTovoid())[$toList]();
+        for (let listener of localListeners) {
+          listener(event);
+        }
+      }
+    }
+    debugFillProperties(description) {
+      if (description == null) dart.nullFailed(I[0], 721, 56, "description");
+      super.debugFillProperties(description);
+      description.add(new (T.DiagnosticsPropertyOfImageInfo()).new("current", this[_currentImage], {ifNull: "unresolved", showName: false}));
+      description.add(new (T.ObjectFlagPropertyOfListOfImageStreamListener()).new("listeners", this[_listeners], {ifPresent: dart.str(this[_listeners][$length]) + " listener" + (this[_listeners][$length] === 1 ? "" : "s")}));
+      description.add(new diagnostics.FlagProperty.new("disposed", {value: this[_disposed], ifTrue: "<disposed>"}));
+    }
+  };
+  (image_stream.ImageStreamCompleter.new = function() {
+    this[_listeners] = T.JSArrayOfImageStreamListener().of([]);
+    this[_currentImage] = null;
+    this[_currentError] = null;
+    this[debugLabel] = null;
+    this[_hadAtLeastOneListener] = false;
+    this[_keepAliveHandles] = 0;
+    this[_disposed] = false;
+    this[_onLastListenerRemovedCallbacks] = T.JSArrayOfVoidTovoid().of([]);
+    ;
+  }).prototype = image_stream.ImageStreamCompleter.prototype;
+  dart.addTypeTests(image_stream.ImageStreamCompleter);
+  dart.addTypeCaches(image_stream.ImageStreamCompleter);
+  dart.setMethodSignature(image_stream.ImageStreamCompleter, () => ({
+    __proto__: dart.getMethods(image_stream.ImageStreamCompleter.__proto__),
+    addListener: dart.fnType(dart.void, [image_stream.ImageStreamListener]),
+    keepAlive: dart.fnType(image_stream.ImageStreamCompleterHandle, []),
+    removeListener: dart.fnType(dart.void, [image_stream.ImageStreamListener]),
+    [_maybeDispose]: dart.fnType(dart.void, []),
+    [_checkDisposed]: dart.fnType(dart.void, []),
+    addOnLastListenerRemovedCallback: dart.fnType(dart.void, [dart.fnType(dart.void, [])]),
+    removeOnLastListenerRemovedCallback: dart.fnType(dart.void, [dart.fnType(dart.void, [])]),
+    setImage: dart.fnType(dart.void, [image_stream.ImageInfo]),
+    reportError: dart.fnType(dart.void, [], {context: dart.nullable(diagnostics.DiagnosticsNode), informationCollector: dart.nullable(dart.fnType(core.Iterable$(diagnostics.DiagnosticsNode), [])), silent: core.bool, stack: dart.nullable(core.StackTrace)}, {exception: core.Object}),
+    reportImageChunkEvent: dart.fnType(dart.void, [image_stream.ImageChunkEvent])
   }));
-  const RenderProxySliver_RenderAnimatedOpacityMixin$36 = class RenderProxySliver_RenderAnimatedOpacityMixin extends proxy_sliver.RenderProxySliver {};
-  (RenderProxySliver_RenderAnimatedOpacityMixin$36.new = function(child) {
-    proxy_box.RenderAnimatedOpacityMixin$(sliver.RenderSliver)[dart.mixinNew].call(this);
-    RenderProxySliver_RenderAnimatedOpacityMixin$36.__proto__.new.call(this, child);
-  }).prototype = RenderProxySliver_RenderAnimatedOpacityMixin$36.prototype;
-  dart.applyMixin(RenderProxySliver_RenderAnimatedOpacityMixin$36, proxy_box.RenderAnimatedOpacityMixin$(sliver.RenderSliver));
-  proxy_sliver.RenderSliverAnimatedOpacity = class RenderSliverAnimatedOpacity extends RenderProxySliver_RenderAnimatedOpacityMixin$36 {};
-  (proxy_sliver.RenderSliverAnimatedOpacity.new = function(opts) {
-    let opacity = opts && 'opacity' in opts ? opts.opacity : null;
-    let alwaysIncludeSemantics = opts && 'alwaysIncludeSemantics' in opts ? opts.alwaysIncludeSemantics : false;
-    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
-    if (!(opacity !== null)) dart.assertFailed(null, I[0], 389, 15, "opacity != null");
-    if (!(alwaysIncludeSemantics !== null)) dart.assertFailed(null, I[0], 390, 15, "alwaysIncludeSemantics != null");
-    proxy_sliver.RenderSliverAnimatedOpacity.__proto__.new.call(this);
-    this.opacity = opacity;
-    this.alwaysIncludeSemantics = alwaysIncludeSemantics;
-    this.child = sliver;
-  }).prototype = proxy_sliver.RenderSliverAnimatedOpacity.prototype;
-  dart.addTypeTests(proxy_sliver.RenderSliverAnimatedOpacity);
-  dart.addTypeCaches(proxy_sliver.RenderSliverAnimatedOpacity);
-  dart.setLibraryUri(proxy_sliver.RenderSliverAnimatedOpacity, I[1]);
-  dart.trackLibraries("packages/flutter/src/rendering/proxy_sliver.dart", {
-    "package:flutter/src/rendering/proxy_sliver.dart": proxy_sliver
+  dart.setGetterSignature(image_stream.ImageStreamCompleter, () => ({
+    __proto__: dart.getGetters(image_stream.ImageStreamCompleter.__proto__),
+    hasListeners: core.bool
+  }));
+  dart.setLibraryUri(image_stream.ImageStreamCompleter, I[1]);
+  dart.setFieldSignature(image_stream.ImageStreamCompleter, () => ({
+    __proto__: dart.getFields(image_stream.ImageStreamCompleter.__proto__),
+    [_listeners]: dart.finalFieldType(core.List$(image_stream.ImageStreamListener)),
+    [_currentImage]: dart.fieldType(dart.nullable(image_stream.ImageInfo)),
+    [_currentError]: dart.fieldType(dart.nullable(assertions.FlutterErrorDetails)),
+    debugLabel: dart.fieldType(dart.nullable(core.String)),
+    [_hadAtLeastOneListener]: dart.fieldType(core.bool),
+    [_keepAliveHandles]: dart.fieldType(core.int),
+    [_disposed]: dart.fieldType(core.bool),
+    [_onLastListenerRemovedCallbacks]: dart.finalFieldType(core.List$(dart.fnType(dart.void, [])))
+  }));
+  image_stream.OneFrameImageStreamCompleter = class OneFrameImageStreamCompleter extends image_stream.ImageStreamCompleter {};
+  (image_stream.OneFrameImageStreamCompleter.new = function(image, opts) {
+    if (image == null) dart.nullFailed(I[0], 750, 50, "image");
+    let informationCollector = opts && 'informationCollector' in opts ? opts.informationCollector : null;
+    if (!(image != null)) dart.assertFailed(null, I[0], 751, 16, "image != null");
+    image_stream.OneFrameImageStreamCompleter.__proto__.new.call(this);
+    image.then(dart.void, dart.bind(this, 'setImage'), {onError: dart.fn((error, stack) => {
+        if (error == null) dart.nullFailed(I[0], 752, 49, "error");
+        if (stack == null) dart.nullFailed(I[0], 752, 67, "stack");
+        this.reportError({context: new assertions.ErrorDescription.new("resolving a single-frame image stream"), exception: error, stack: stack, informationCollector: informationCollector, silent: true});
+      }, T.ObjectAndStackTraceToNull())});
+  }).prototype = image_stream.OneFrameImageStreamCompleter.prototype;
+  dart.addTypeTests(image_stream.OneFrameImageStreamCompleter);
+  dart.addTypeCaches(image_stream.OneFrameImageStreamCompleter);
+  dart.setLibraryUri(image_stream.OneFrameImageStreamCompleter, I[1]);
+  var _codec = dart.privateName(image_stream, "_codec");
+  var _nextFrame = dart.privateName(image_stream, "_nextFrame");
+  var __MultiFrameImageStreamCompleter__shownTimestamp = dart.privateName(image_stream, "_#MultiFrameImageStreamCompleter#_shownTimestamp");
+  var _frameDuration = dart.privateName(image_stream, "_frameDuration");
+  var _framesEmitted = dart.privateName(image_stream, "_framesEmitted");
+  var _timer = dart.privateName(image_stream, "_timer");
+  var _frameCallbackScheduled = dart.privateName(image_stream, "_frameCallbackScheduled");
+  var _informationCollector = dart.privateName(image_stream, "_informationCollector");
+  var _scale = dart.privateName(image_stream, "_scale");
+  var _handleCodecReady = dart.privateName(image_stream, "_handleCodecReady");
+  var _shownTimestamp = dart.privateName(image_stream, "_shownTimestamp");
+  var _decodeNextFrameAndSchedule = dart.privateName(image_stream, "_decodeNextFrameAndSchedule");
+  var _isFirstFrame = dart.privateName(image_stream, "_isFirstFrame");
+  var _hasFrameDurationPassed = dart.privateName(image_stream, "_hasFrameDurationPassed");
+  var _emitFrame = dart.privateName(image_stream, "_emitFrame");
+  var _scheduleAppFrame = dart.privateName(image_stream, "_scheduleAppFrame");
+  var _handleAppFrame = dart.privateName(image_stream, "_handleAppFrame");
+  image_stream.MultiFrameImageStreamCompleter = class MultiFrameImageStreamCompleter extends image_stream.ImageStreamCompleter {
+    get [_shownTimestamp]() {
+      let t4;
+      t4 = this[__MultiFrameImageStreamCompleter__shownTimestamp];
+      return t4 == null ? dart.throw(new _internal.LateError.fieldNI("_shownTimestamp")) : t4;
+    }
+    set [_shownTimestamp](t4) {
+      if (t4 == null) dart.nullFailed(I[0], 853, 17, "null");
+      this[__MultiFrameImageStreamCompleter__shownTimestamp] = t4;
+    }
+    [_handleCodecReady](codec) {
+      if (codec == null) dart.nullFailed(I[0], 863, 35, "codec");
+      this[_codec] = codec;
+      if (!(this[_codec] != null)) dart.assertFailed(null, I[0], 865, 12, "_codec != null");
+      if (dart.test(this.hasListeners)) {
+        this[_decodeNextFrameAndSchedule]();
+      }
+    }
+    [_handleAppFrame](timestamp) {
+      if (timestamp == null) dart.nullFailed(I[0], 872, 33, "timestamp");
+      this[_frameCallbackScheduled] = false;
+      if (!dart.test(this.hasListeners)) return;
+      if (!(this[_nextFrame] != null)) dart.assertFailed(null, I[0], 876, 12, "_nextFrame != null");
+      if (dart.test(this[_isFirstFrame]()) || dart.test(this[_hasFrameDurationPassed](timestamp))) {
+        this[_emitFrame](new image_stream.ImageInfo.new({image: dart.nullCheck(this[_nextFrame]).image.clone(), scale: this[_scale], debugLabel: this.debugLabel}));
+        this[_shownTimestamp] = timestamp;
+        this[_frameDuration] = dart.nullCheck(this[_nextFrame]).duration;
+        dart.nullCheck(this[_nextFrame]).image.dispose();
+        this[_nextFrame] = null;
+        let completedCycles = (dart.notNull(this[_framesEmitted]) / dart.notNull(dart.nullCheck(this[_codec]).frameCount))[$truncate]();
+        if (dart.nullCheck(this[_codec]).repetitionCount === -1 || completedCycles <= dart.notNull(dart.nullCheck(this[_codec]).repetitionCount)) {
+          this[_decodeNextFrameAndSchedule]();
+        }
+        return;
+      }
+      let delay = dart.nullCheck(this[_frameDuration])['-'](timestamp['-'](this[_shownTimestamp]));
+      this[_timer] = async.Timer.new(delay['*'](binding.timeDilation), dart.fn(() => {
+        this[_scheduleAppFrame]();
+      }, T.VoidTovoid()));
+    }
+    [_isFirstFrame]() {
+      return this[_frameDuration] == null;
+    }
+    [_hasFrameDurationPassed](timestamp) {
+      if (timestamp == null) dart.nullFailed(I[0], 903, 41, "timestamp");
+      return timestamp['-'](this[_shownTimestamp])['>='](dart.nullCheck(this[_frameDuration]));
+    }
+    [_decodeNextFrameAndSchedule]() {
+      return async.async(dart.void, (function* _decodeNextFrameAndSchedule() {
+        let t5;
+        t5 = this[_nextFrame];
+        t5 == null ? null : t5.image.dispose();
+        this[_nextFrame] = null;
+        try {
+          this[_nextFrame] = (yield dart.nullCheck(this[_codec]).getNextFrame());
+        } catch (e) {
+          let exception = dart.getThrown(e);
+          let stack = dart.stackTrace(e);
+          if (core.Object.is(exception)) {
+            this.reportError({context: new assertions.ErrorDescription.new("resolving an image frame"), exception: exception, stack: stack, informationCollector: this[_informationCollector], silent: true});
+            return;
+          } else
+            throw e;
+        }
+        if (dart.nullCheck(this[_codec]).frameCount === 1) {
+          if (!dart.test(this.hasListeners)) {
+            return;
+          }
+          this[_emitFrame](new image_stream.ImageInfo.new({image: dart.nullCheck(this[_nextFrame]).image.clone(), scale: this[_scale], debugLabel: this.debugLabel}));
+          dart.nullCheck(this[_nextFrame]).image.dispose();
+          this[_nextFrame] = null;
+          return;
+        }
+        this[_scheduleAppFrame]();
+      }).bind(this));
+    }
+    [_scheduleAppFrame]() {
+      if (dart.test(this[_frameCallbackScheduled])) {
+        return;
+      }
+      this[_frameCallbackScheduled] = true;
+      dart.nullCheck(binding.SchedulerBinding.instance).scheduleFrameCallback(dart.bind(this, _handleAppFrame));
+    }
+    [_emitFrame](imageInfo) {
+      if (imageInfo == null) dart.nullFailed(I[0], 953, 29, "imageInfo");
+      this.setImage(imageInfo);
+      this[_framesEmitted] = dart.notNull(this[_framesEmitted]) + 1;
+    }
+    addListener(listener) {
+      if (listener == null) dart.nullFailed(I[0], 959, 40, "listener");
+      if (!dart.test(this.hasListeners) && this[_codec] != null) this[_decodeNextFrameAndSchedule]();
+      super.addListener(listener);
+    }
+    removeListener(listener) {
+      let t6;
+      if (listener == null) dart.nullFailed(I[0], 966, 43, "listener");
+      super.removeListener(listener);
+      if (!dart.test(this.hasListeners)) {
+        t6 = this[_timer];
+        t6 == null ? null : t6.cancel();
+        this[_timer] = null;
+      }
+    }
+  };
+  (image_stream.MultiFrameImageStreamCompleter.new = function(opts) {
+    let codec = opts && 'codec' in opts ? opts.codec : null;
+    if (codec == null) dart.nullFailed(I[0], 815, 31, "codec");
+    let scale = opts && 'scale' in opts ? opts.scale : null;
+    if (scale == null) dart.nullFailed(I[0], 816, 21, "scale");
+    let debugLabel = opts && 'debugLabel' in opts ? opts.debugLabel : null;
+    let chunkEvents = opts && 'chunkEvents' in opts ? opts.chunkEvents : null;
+    let informationCollector = opts && 'informationCollector' in opts ? opts.informationCollector : null;
+    this[_codec] = null;
+    this[_nextFrame] = null;
+    this[__MultiFrameImageStreamCompleter__shownTimestamp] = null;
+    this[_frameDuration] = null;
+    this[_framesEmitted] = 0;
+    this[_timer] = null;
+    this[_frameCallbackScheduled] = false;
+    if (!(codec != null)) dart.assertFailed(null, I[0], 820, 15, "codec != null");
+    this[_informationCollector] = informationCollector;
+    this[_scale] = scale;
+    image_stream.MultiFrameImageStreamCompleter.__proto__.new.call(this);
+    this.debugLabel = debugLabel;
+    codec.then(dart.void, dart.bind(this, _handleCodecReady), {onError: dart.fn((error, stack) => {
+        if (error == null) dart.nullFailed(I[0], 824, 58, "error");
+        if (stack == null) dart.nullFailed(I[0], 824, 76, "stack");
+        this.reportError({context: new assertions.ErrorDescription.new("resolving an image codec"), exception: error, stack: stack, informationCollector: informationCollector, silent: true});
+      }, T.ObjectAndStackTraceToNull())});
+    if (chunkEvents != null) {
+      chunkEvents.listen(dart.bind(this, 'reportImageChunkEvent'), {onError: dart.fn((error, stack) => {
+          if (error == null) dart.nullFailed(I[0], 835, 26, "error");
+          if (stack == null) dart.nullFailed(I[0], 835, 44, "stack");
+          this.reportError({context: new assertions.ErrorDescription.new("loading an image"), exception: error, stack: stack, informationCollector: informationCollector, silent: true});
+        }, T.ObjectAndStackTraceToNull())});
+    }
+  }).prototype = image_stream.MultiFrameImageStreamCompleter.prototype;
+  dart.addTypeTests(image_stream.MultiFrameImageStreamCompleter);
+  dart.addTypeCaches(image_stream.MultiFrameImageStreamCompleter);
+  dart.setMethodSignature(image_stream.MultiFrameImageStreamCompleter, () => ({
+    __proto__: dart.getMethods(image_stream.MultiFrameImageStreamCompleter.__proto__),
+    [_handleCodecReady]: dart.fnType(dart.void, [ui.Codec]),
+    [_handleAppFrame]: dart.fnType(dart.void, [core.Duration]),
+    [_isFirstFrame]: dart.fnType(core.bool, []),
+    [_hasFrameDurationPassed]: dart.fnType(core.bool, [core.Duration]),
+    [_decodeNextFrameAndSchedule]: dart.fnType(async.Future$(dart.void), []),
+    [_scheduleAppFrame]: dart.fnType(dart.void, []),
+    [_emitFrame]: dart.fnType(dart.void, [image_stream.ImageInfo])
+  }));
+  dart.setGetterSignature(image_stream.MultiFrameImageStreamCompleter, () => ({
+    __proto__: dart.getGetters(image_stream.MultiFrameImageStreamCompleter.__proto__),
+    [_shownTimestamp]: core.Duration
+  }));
+  dart.setSetterSignature(image_stream.MultiFrameImageStreamCompleter, () => ({
+    __proto__: dart.getSetters(image_stream.MultiFrameImageStreamCompleter.__proto__),
+    [_shownTimestamp]: core.Duration
+  }));
+  dart.setLibraryUri(image_stream.MultiFrameImageStreamCompleter, I[1]);
+  dart.setFieldSignature(image_stream.MultiFrameImageStreamCompleter, () => ({
+    __proto__: dart.getFields(image_stream.MultiFrameImageStreamCompleter.__proto__),
+    [_codec]: dart.fieldType(dart.nullable(ui.Codec)),
+    [_scale]: dart.finalFieldType(core.double),
+    [_informationCollector]: dart.finalFieldType(dart.nullable(dart.fnType(core.Iterable$(diagnostics.DiagnosticsNode), []))),
+    [_nextFrame]: dart.fieldType(dart.nullable(ui.FrameInfo)),
+    [__MultiFrameImageStreamCompleter__shownTimestamp]: dart.fieldType(dart.nullable(core.Duration)),
+    [_frameDuration]: dart.fieldType(dart.nullable(core.Duration)),
+    [_framesEmitted]: dart.fieldType(core.int),
+    [_timer]: dart.fieldType(dart.nullable(async.Timer)),
+    [_frameCallbackScheduled]: dart.fieldType(core.bool)
+  }));
+  dart.trackLibraries("packages/flutter/src/painting/image_stream.dart", {
+    "package:flutter/src/painting/image_stream.dart": image_stream
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["proxy_sliver.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6BA2CoC;AAChC,WAAqB,mCAAjB,AAAM,KAAD,cACP,AAAM,AAAuC,KAAxC,cAAc;IACvB;;AAIE,YAAO,AAAM;AACmC,MAA3C,AAAE,eAAP,mBAAc,mCAA6B;AACjB,MAA1B,gBAAgB,AAAE,eAAP;IACb;UAG2B,SAAgB;AACzC,UAAI,oBACF,AAAQ,AAA0B,OAA3B,YAAiB,eAAL,aAAQ,MAAM;IACrC;oBAGyC;UAAyB;UAAkC;AAClG,YAAO,AAEL,uBADkB,AAAE,AAAc,eAA1B,AAAE,eAAP,sCAAiC,KAC5B,AAAE,eAAP,oBACD,MAAM,qBACY,gBAAgB,qBACf,iBAAiB;IAE1C;;6BAG0C;AACxC,YAAO,AAAM,KAAD;AACZ,WAAO,AAAM,KAAD,WAAS;AACrB,YAAO;IACT;wBAGsC,OAAe;6BAAf;AACpC,YAAO,AAAM,KAAD;AACmB,4BAAoC,mCAAF,eAAhB,AAAM,KAAD;AACR,MAA9C,AAAgB,eAAD,qBAAqB,SAAS;IAC/C;;iDA9CiC;AAAjC;AACoB,IAAb,aAAQ,KAAK;EACpB;;;;;;;;;;;;;AA0EmC,YAAA,AAAc,uBAAI,iBAAU,KAAK,iBAAU;IAAI;;AAc5D;IAAQ;gBAEX;AACjB,YAAO,AAAM,KAAD;AACZ,YAAO,AAAM,AAAO,KAAR,IAAI,OAAO,AAAM,KAAD,IAAI;AAChC,UAAI,AAAS,mBAAG,KAAK,EACnB;AACS,+BAAqB;AACrB,uBAAa,AAAO,iBAAG;AAClB,MAAhB,iBAAW,KAAK;AAC+B,MAA/C,eAAkB,6BAAoB;AACtC,UAAI,kBAAkB,KAAI,6BACxB,AAAgC;AAClB,MAAhB;AACA,UAAI,UAAU,MAAK,AAAO,iBAAG,OAAO,6BAClC,AAA0B;IAC9B;;AAOmC;IAAuB;+BAE1B;AAC9B,UAAI,AAAM,KAAD,KAAI,+BACX;AAC6B,MAA/B,gCAA0B,KAAK;AACL,MAA1B;IACF;UAG2B,SAAgB;AACzC,UAAI,sBAAgC,AAAE,eAAZ,AAAE,eAAP;AACnB,YAAI,AAAO,iBAAG;AAEA,UAAZ,aAAQ;AACR;;AAEF,YAAI,AAAO,iBAAG;AAEA,UAAZ,aAAQ;AAC0B,UAAlC,AAAQ,OAAD,YAAiB,eAAL,aAAQ,MAAM;AACjC;;AAEF,aAAO;AAMN,QALD,aAAQ,AAAQ,OAAD,aACb,MAAM,EACN,cACM,kDACU,qBAAN;;IAGhB;8BAGmD;AACjD,UAAI,uBAAkB,iBAAU,KAAK,8BACnC,AAAO,AAAQ,OAAR,CAAM,eAAL;IACZ;wBAGqD;AACd,MAA/B,0BAAoB,UAAU;AACc,MAAlD,AAAW,UAAD,KAAK,mCAAe,WAAW;AAC8E,MAAvH,AAAW,UAAD,KAAK,iCAAa,kCAAiC,qCAAgC;IAC/F;;;QA7FS;QACF;QACS;UACJ,AAAkC,OAA3B,aAAY,AAAQ,OAAD,IAAI,OAAO,AAAQ,OAAD,IAAI;UAChD,AAAuB,sBAAD;IACpB,iBAAE,OAAO;IACM,gCAAE,sBAAsB;IACzC,eAAW,6BAAoB,OAAO;AARlD;AASgB,IAAd,aAAQ,MAAM;EAChB;;;;;;;;;;;;;;;;;;;;;;;;;AAoHqB;IAAS;iBAEZ;AAChB,YAAO,AAAM,KAAD;AACZ,UAAI,AAAM,KAAD,KAAI,iBACX;AACe,MAAjB,kBAAY,KAAK;AACjB,UAAI,AAAmB,qCAA8B,eAAlB,2BACjC,AAA0B;IAC9B;;AAQ+B;IAAkB;0BAErB;AAC1B,UAAI,AAAM,KAAD,IAAI,0BACX;AACS,8BAAoB;AACL,MAA1B,2BAAqB,KAAK;AAC1B,UAAI,iBAAiB,KAAI,mCACvB,AAA0B;IAC9B;;;AAEwC;0BAAqB;IAAQ;YAGpC;UAAyB;UAAkC;AAC1F,YACE,EADM,iBACG,cACP,MAAM,qBACY,gBAAgB,qBACf,iBAAiB;IAE1C;8BAGmD;AACjD,UAAI,uBAAkB,mCACpB,AAAO,AAAQ,OAAR,CAAM,eAAL;IACZ;wBAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2B,MAA/D,AAAW,UAAD,KAAK,wCAA0B,YAAY;AACiI,MAAtL,AAAW,UAAD,KAAK,wCAA0B,qBAAqB,iDAA0C,AAAkB,iCAAU,AAA0C,yBAA7B,qCAA+B;IAClL;;;QAhEgB;QACT;QACC;UACI,AAAS,QAAD;IACL,kBAAE,QAAQ;IACD,2BAAE,iBAAiB;AAN3C;AAOgB,IAAd,aAAQ,MAAM;EAChB;;;;;;;;;;;;;;;;;;;;;;;AAgFqB;IAAS;iBAGZ;AAChB,YAAO,AAAM,KAAD;AACZ,UAAI,AAAM,KAAD,KAAI,iBACX;AACe,MAAjB,kBAAY,KAAK;AACsB,MAAvC;IACF;;AAIE,YAAO,AAAM;AACmC,MAA3C,AAAE,eAAP,mBAAc,mCAA6B;AAC3C,WAAK;AACuB,QAA1B,gBAAgB,AAAE,eAAP;;AAEmB,QAA9B,gBAA0B;IAC9B;YAGiC;UAAyB;UAAkC;AAC1F,YAAiB,EAAT,iBAAkB,cACxB,MAAM,qBACY,gBAAgB,qBACf,iBAAiB;IAExC;oBAGyC;UAAyB;UAAkC;AAClG,YAGE,EAHM,iBACH,sBACe,AAAE,AAAc,eAA1B,AAAE,eAAP,sCAAiC,KAC5B,AAAE,eAAP,oBACD,MAAM,qBACY,gBAAgB,qBACf,iBAAiB;IAE1C;UAG2B,SAAgB;AACzC,UAAI,eACF;AACgC,MAAlC,AAAQ,OAAD,YAAiB,eAAL,aAAQ,MAAM;IACnC;8BAGmD;AACjD,UAAI,eACF;AACsC,MAAlC,gCAA0B,OAAO;IACzC;wBAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2B,MAA/D,AAAW,UAAD,KAAK,wCAA0B,YAAY;IACvD;;AAIE,UAAI,AAAM,oBACR,MAAwB;AAC1B,YAAwB,kCACjB,AAAE,eAAP,qCACQ,gBACC,gBAAgC,4CAAgC;IAG7E;;;QAtFO;QACS;UACJ,AAAS,QAAD;IACL,kBAAE,QAAQ;AAJzB;AAKgB,IAAd,aAAQ,MAAM;EAChB;;;;;;;;;;;;;;;;;kEA9PiC;;;;;;;QA2VJ;QACtB;QACS;UACJ,AAAQ,OAAD;UACP,AAAuB,sBAAD;AALlC;AAMwB,IAAjB,eAAU,OAAO;AAC8B,IAA/C,8BAAyB,sBAAsB;AACtC,IAAd,aAAQ,MAAM;EAChB","file":"../../../../../../../../E:/packages/flutter/src/rendering/proxy_sliver.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["image_stream.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/painting/image_stream.dart.lib.js"}');
   // Exports:
   return {
-    src__rendering__proxy_sliver: proxy_sliver
+    src__painting__image_stream: image_stream
   };
 }));
 
-//# sourceMappingURL=proxy_sliver.dart.lib.js.map
+//# sourceMappingURL=image_stream.dart.lib.js.map

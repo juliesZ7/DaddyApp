@@ -1,555 +1,348 @@
-define(['dart_sdk', 'packages/flutter/src/gestures/velocity_tracker.dart', 'packages/flutter/src/gestures/constants.dart', 'packages/flutter/src/gestures/arena.dart', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/gestures/recognizer.dart'], (function load__packages__flutter__src__gestures__long_press_dart(dart_sdk, packages__flutter__src__gestures__velocity_tracker$46dart, packages__flutter__src__gestures__constants$46dart, packages__flutter__src__gestures__arena$46dart, packages__flutter__src__gestures__events$46dart, packages__flutter__src__gestures__recognizer$46dart) {
+define(['dart_sdk', 'packages/intl/src/intl/date_computation.dart', 'packages/clock/src/stopwatch.dart'], (function load__packages__intl__src__intl__date_builder_dart(dart_sdk, packages__intl__src__intl__date_computation$46dart, packages__clock__src__stopwatch$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const velocity_tracker = packages__flutter__src__gestures__velocity_tracker$46dart.src__gestures__velocity_tracker;
-  const constants = packages__flutter__src__gestures__constants$46dart.src__gestures__constants;
-  const arena = packages__flutter__src__gestures__arena$46dart.src__gestures__arena;
-  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
-  const recognizer = packages__flutter__src__gestures__recognizer$46dart.src__gestures__recognizer;
-  var long_press = Object.create(dart.library);
+  const date_computation = packages__intl__src__intl__date_computation$46dart.src__intl__date_computation;
+  const $default = packages__clock__src__stopwatch$46dart.src__default;
+  var date_builder = Object.create(dart.library);
+  var $truncate = dartx.truncate;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
+    _: () => T
   };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
   const CT = Object.create({
     _: () => (C, CT)
   });
-  dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.const({
-        __proto__: ui.Offset.prototype,
-        [OffsetBase__dy]: 0,
-        [OffsetBase__dx]: 0
-      });
-    },
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: velocity_tracker.Velocity.prototype,
-        [Velocity_pixelsPerSecond]: C[0] || CT.C0
-      });
-    }
-  }, false);
-  var C = Array(2).fill(void 0);
+  var C = [];
   var I = [
-    "file:///C:/src/flutter/packages/flutter/lib/src/gestures/long_press.dart",
-    "package:flutter/src/gestures/long_press.dart"
+    "file:///D:/Program/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/lib/src/intl/date_builder.dart",
+    "package:intl/src/intl/date_builder.dart"
   ];
-  var globalPosition$ = dart.privateName(long_press, "LongPressStartDetails.globalPosition");
-  var localPosition$ = dart.privateName(long_press, "LongPressStartDetails.localPosition");
-  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
-  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
-  long_press.LongPressStartDetails = class LongPressStartDetails extends core.Object {
-    get globalPosition() {
-      return this[globalPosition$];
+  var year = dart.privateName(date_builder, "DateBuilder.year");
+  var month = dart.privateName(date_builder, "DateBuilder.month");
+  var day = dart.privateName(date_builder, "DateBuilder.day");
+  var dayOfYear = dart.privateName(date_builder, "DateBuilder.dayOfYear");
+  var hour = dart.privateName(date_builder, "DateBuilder.hour");
+  var minute = dart.privateName(date_builder, "DateBuilder.minute");
+  var second = dart.privateName(date_builder, "DateBuilder.second");
+  var fractionalSecond = dart.privateName(date_builder, "DateBuilder.fractionalSecond");
+  var pm = dart.privateName(date_builder, "DateBuilder.pm");
+  var utc = dart.privateName(date_builder, "DateBuilder.utc");
+  var dateOnly = dart.privateName(date_builder, "DateBuilder.dateOnly");
+  var _hasAmbiguousCentury = dart.privateName(date_builder, "_hasAmbiguousCentury");
+  var _date = dart.privateName(date_builder, "_date");
+  var _retried = dart.privateName(date_builder, "_retried");
+  var _locale$ = dart.privateName(date_builder, "_locale");
+  var _dateTimeConstructor$ = dart.privateName(date_builder, "_dateTimeConstructor");
+  var _verify = dart.privateName(date_builder, "_verify");
+  var _offsetYear = dart.privateName(date_builder, "_offsetYear");
+  var _correctForErrors = dart.privateName(date_builder, "_correctForErrors");
+  date_builder.DateBuilder = class DateBuilder extends core.Object {
+    get year() {
+      return this[year];
     }
-    set globalPosition(value) {
-      super.globalPosition = value;
+    set year(value) {
+      this[year] = value;
     }
-    get localPosition() {
-      return this[localPosition$];
+    get month() {
+      return this[month];
     }
-    set localPosition(value) {
-      super.localPosition = value;
+    set month(value) {
+      this[month] = value;
     }
-  };
-  (long_press.LongPressStartDetails.new = function(opts) {
-    let t0;
-    let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : C[0] || CT.C0;
-    let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
-    this[globalPosition$] = globalPosition;
-    if (!(globalPosition !== null)) dart.assertFailed(null, I[0], 59, 15, "globalPosition != null");
-    this[localPosition$] = (t0 = localPosition, t0 == null ? globalPosition : t0);
-    ;
-  }).prototype = long_press.LongPressStartDetails.prototype;
-  dart.addTypeTests(long_press.LongPressStartDetails);
-  dart.addTypeCaches(long_press.LongPressStartDetails);
-  dart.setLibraryUri(long_press.LongPressStartDetails, I[1]);
-  dart.setFieldSignature(long_press.LongPressStartDetails, () => ({
-    __proto__: dart.getFields(long_press.LongPressStartDetails.__proto__),
-    globalPosition: dart.finalFieldType(ui.Offset),
-    localPosition: dart.finalFieldType(ui.Offset)
-  }));
-  var globalPosition$0 = dart.privateName(long_press, "LongPressMoveUpdateDetails.globalPosition");
-  var localPosition$0 = dart.privateName(long_press, "LongPressMoveUpdateDetails.localPosition");
-  var offsetFromOrigin$ = dart.privateName(long_press, "LongPressMoveUpdateDetails.offsetFromOrigin");
-  var localOffsetFromOrigin$ = dart.privateName(long_press, "LongPressMoveUpdateDetails.localOffsetFromOrigin");
-  long_press.LongPressMoveUpdateDetails = class LongPressMoveUpdateDetails extends core.Object {
-    get globalPosition() {
-      return this[globalPosition$0];
+    get day() {
+      return this[day];
     }
-    set globalPosition(value) {
-      super.globalPosition = value;
+    set day(value) {
+      this[day] = value;
     }
-    get localPosition() {
-      return this[localPosition$0];
+    get dayOfYear() {
+      return this[dayOfYear];
     }
-    set localPosition(value) {
-      super.localPosition = value;
+    set dayOfYear(value) {
+      this[dayOfYear] = value;
     }
-    get offsetFromOrigin() {
-      return this[offsetFromOrigin$];
+    get hour() {
+      return this[hour];
     }
-    set offsetFromOrigin(value) {
-      super.offsetFromOrigin = value;
+    set hour(value) {
+      this[hour] = value;
     }
-    get localOffsetFromOrigin() {
-      return this[localOffsetFromOrigin$];
+    get minute() {
+      return this[minute];
     }
-    set localOffsetFromOrigin(value) {
-      super.localOffsetFromOrigin = value;
+    set minute(value) {
+      this[minute] = value;
     }
-  };
-  (long_press.LongPressMoveUpdateDetails.new = function(opts) {
-    let t0, t0$;
-    let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : C[0] || CT.C0;
-    let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
-    let offsetFromOrigin = opts && 'offsetFromOrigin' in opts ? opts.offsetFromOrigin : C[0] || CT.C0;
-    let localOffsetFromOrigin = opts && 'localOffsetFromOrigin' in opts ? opts.localOffsetFromOrigin : null;
-    this[globalPosition$0] = globalPosition;
-    this[offsetFromOrigin$] = offsetFromOrigin;
-    if (!(globalPosition !== null)) dart.assertFailed(null, I[0], 85, 15, "globalPosition != null");
-    if (!(offsetFromOrigin !== null)) dart.assertFailed(null, I[0], 86, 15, "offsetFromOrigin != null");
-    this[localPosition$0] = (t0 = localPosition, t0 == null ? globalPosition : t0);
-    this[localOffsetFromOrigin$] = (t0$ = localOffsetFromOrigin, t0$ == null ? offsetFromOrigin : t0$);
-    ;
-  }).prototype = long_press.LongPressMoveUpdateDetails.prototype;
-  dart.addTypeTests(long_press.LongPressMoveUpdateDetails);
-  dart.addTypeCaches(long_press.LongPressMoveUpdateDetails);
-  dart.setLibraryUri(long_press.LongPressMoveUpdateDetails, I[1]);
-  dart.setFieldSignature(long_press.LongPressMoveUpdateDetails, () => ({
-    __proto__: dart.getFields(long_press.LongPressMoveUpdateDetails.__proto__),
-    globalPosition: dart.finalFieldType(ui.Offset),
-    localPosition: dart.finalFieldType(ui.Offset),
-    offsetFromOrigin: dart.finalFieldType(ui.Offset),
-    localOffsetFromOrigin: dart.finalFieldType(ui.Offset)
-  }));
-  var globalPosition$1 = dart.privateName(long_press, "LongPressEndDetails.globalPosition");
-  var localPosition$1 = dart.privateName(long_press, "LongPressEndDetails.localPosition");
-  var velocity$ = dart.privateName(long_press, "LongPressEndDetails.velocity");
-  var Velocity_pixelsPerSecond = dart.privateName(velocity_tracker, "Velocity.pixelsPerSecond");
-  long_press.LongPressEndDetails = class LongPressEndDetails extends core.Object {
-    get globalPosition() {
-      return this[globalPosition$1];
+    get second() {
+      return this[second];
     }
-    set globalPosition(value) {
-      super.globalPosition = value;
+    set second(value) {
+      this[second] = value;
     }
-    get localPosition() {
-      return this[localPosition$1];
+    get fractionalSecond() {
+      return this[fractionalSecond];
     }
-    set localPosition(value) {
-      super.localPosition = value;
+    set fractionalSecond(value) {
+      this[fractionalSecond] = value;
     }
-    get velocity() {
-      return this[velocity$];
+    get pm() {
+      return this[pm];
     }
-    set velocity(value) {
-      super.velocity = value;
+    set pm(value) {
+      this[pm] = value;
     }
-  };
-  (long_press.LongPressEndDetails.new = function(opts) {
-    let t0;
-    let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : C[0] || CT.C0;
-    let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
-    let velocity = opts && 'velocity' in opts ? opts.velocity : C[1] || CT.C1;
-    this[globalPosition$1] = globalPosition;
-    this[velocity$] = velocity;
-    if (!(globalPosition !== null)) dart.assertFailed(null, I[0], 122, 15, "globalPosition != null");
-    this[localPosition$1] = (t0 = localPosition, t0 == null ? globalPosition : t0);
-    ;
-  }).prototype = long_press.LongPressEndDetails.prototype;
-  dart.addTypeTests(long_press.LongPressEndDetails);
-  dart.addTypeCaches(long_press.LongPressEndDetails);
-  dart.setLibraryUri(long_press.LongPressEndDetails, I[1]);
-  dart.setFieldSignature(long_press.LongPressEndDetails, () => ({
-    __proto__: dart.getFields(long_press.LongPressEndDetails.__proto__),
-    globalPosition: dart.finalFieldType(ui.Offset),
-    localPosition: dart.finalFieldType(ui.Offset),
-    velocity: dart.finalFieldType(velocity_tracker.Velocity)
-  }));
-  var onLongPress = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPress");
-  var onLongPressStart = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPressStart");
-  var onLongPressMoveUpdate = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPressMoveUpdate");
-  var onLongPressUp = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPressUp");
-  var onLongPressEnd = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPressEnd");
-  var onSecondaryLongPress = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPress");
-  var onSecondaryLongPressStart = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPressStart");
-  var onSecondaryLongPressMoveUpdate = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPressMoveUpdate");
-  var onSecondaryLongPressUp = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPressUp");
-  var onSecondaryLongPressEnd = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPressEnd");
-  var onTertiaryLongPress = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPress");
-  var onTertiaryLongPressStart = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPressStart");
-  var onTertiaryLongPressMoveUpdate = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPressMoveUpdate");
-  var onTertiaryLongPressUp = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPressUp");
-  var onTertiaryLongPressEnd = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPressEnd");
-  var _longPressAccepted = dart.privateName(long_press, "_longPressAccepted");
-  var _longPressOrigin = dart.privateName(long_press, "_longPressOrigin");
-  var _initialButtons = dart.privateName(long_press, "_initialButtons");
-  var _velocityTracker = dart.privateName(long_press, "_velocityTracker");
-  var _checkLongPressStart = dart.privateName(long_press, "_checkLongPressStart");
-  var _checkLongPressEnd = dart.privateName(long_press, "_checkLongPressEnd");
-  var _reset = dart.privateName(long_press, "_reset");
-  var _checkLongPressMoveUpdate = dart.privateName(long_press, "_checkLongPressMoveUpdate");
-  long_press.LongPressGestureRecognizer = class LongPressGestureRecognizer extends recognizer.PrimaryPointerGestureRecognizer {
-    get onLongPress() {
-      return this[onLongPress];
+    get utc() {
+      return this[utc];
     }
-    set onLongPress(value) {
-      this[onLongPress] = value;
+    set utc(value) {
+      this[utc] = value;
     }
-    get onLongPressStart() {
-      return this[onLongPressStart];
+    get dateOnly() {
+      return this[dateOnly];
     }
-    set onLongPressStart(value) {
-      this[onLongPressStart] = value;
+    set dateOnly(value) {
+      this[dateOnly] = value;
     }
-    get onLongPressMoveUpdate() {
-      return this[onLongPressMoveUpdate];
+    setYear(x) {
+      if (x == null) dart.nullFailed(I[0], 66, 20, "x");
+      this.year = x;
     }
-    set onLongPressMoveUpdate(value) {
-      this[onLongPressMoveUpdate] = value;
+    setHasAmbiguousCentury(isAmbiguous) {
+      if (isAmbiguous == null) dart.nullFailed(I[0], 72, 36, "isAmbiguous");
+      this[_hasAmbiguousCentury] = isAmbiguous;
     }
-    get onLongPressUp() {
-      return this[onLongPressUp];
+    setMonth(x) {
+      if (x == null) dart.nullFailed(I[0], 76, 21, "x");
+      this.month = x;
     }
-    set onLongPressUp(value) {
-      this[onLongPressUp] = value;
+    setDay(x) {
+      if (x == null) dart.nullFailed(I[0], 80, 19, "x");
+      this.day = x;
     }
-    get onLongPressEnd() {
-      return this[onLongPressEnd];
+    setDayOfYear(x) {
+      if (x == null) dart.nullFailed(I[0], 84, 25, "x");
+      this.dayOfYear = x;
     }
-    set onLongPressEnd(value) {
-      this[onLongPressEnd] = value;
+    get dayOrDayOfYear() {
+      return this.dayOfYear === 0 ? this.day : this.dayOfYear;
     }
-    get onSecondaryLongPress() {
-      return this[onSecondaryLongPress];
+    setHour(x) {
+      if (x == null) dart.nullFailed(I[0], 92, 20, "x");
+      this.hour = x;
     }
-    set onSecondaryLongPress(value) {
-      this[onSecondaryLongPress] = value;
+    setMinute(x) {
+      if (x == null) dart.nullFailed(I[0], 96, 22, "x");
+      this.minute = x;
     }
-    get onSecondaryLongPressStart() {
-      return this[onSecondaryLongPressStart];
+    setSecond(x) {
+      if (x == null) dart.nullFailed(I[0], 100, 22, "x");
+      this.second = x;
     }
-    set onSecondaryLongPressStart(value) {
-      this[onSecondaryLongPressStart] = value;
+    setFractionalSecond(x) {
+      if (x == null) dart.nullFailed(I[0], 104, 32, "x");
+      this.fractionalSecond = x;
     }
-    get onSecondaryLongPressMoveUpdate() {
-      return this[onSecondaryLongPressMoveUpdate];
+    get hour24() {
+      return dart.test(this.pm) ? dart.notNull(this.hour) + 12 : this.hour;
     }
-    set onSecondaryLongPressMoveUpdate(value) {
-      this[onSecondaryLongPressMoveUpdate] = value;
-    }
-    get onSecondaryLongPressUp() {
-      return this[onSecondaryLongPressUp];
-    }
-    set onSecondaryLongPressUp(value) {
-      this[onSecondaryLongPressUp] = value;
-    }
-    get onSecondaryLongPressEnd() {
-      return this[onSecondaryLongPressEnd];
-    }
-    set onSecondaryLongPressEnd(value) {
-      this[onSecondaryLongPressEnd] = value;
-    }
-    get onTertiaryLongPress() {
-      return this[onTertiaryLongPress];
-    }
-    set onTertiaryLongPress(value) {
-      this[onTertiaryLongPress] = value;
-    }
-    get onTertiaryLongPressStart() {
-      return this[onTertiaryLongPressStart];
-    }
-    set onTertiaryLongPressStart(value) {
-      this[onTertiaryLongPressStart] = value;
-    }
-    get onTertiaryLongPressMoveUpdate() {
-      return this[onTertiaryLongPressMoveUpdate];
-    }
-    set onTertiaryLongPressMoveUpdate(value) {
-      this[onTertiaryLongPressMoveUpdate] = value;
-    }
-    get onTertiaryLongPressUp() {
-      return this[onTertiaryLongPressUp];
-    }
-    set onTertiaryLongPressUp(value) {
-      this[onTertiaryLongPressUp] = value;
-    }
-    get onTertiaryLongPressEnd() {
-      return this[onTertiaryLongPressEnd];
-    }
-    set onTertiaryLongPressEnd(value) {
-      this[onTertiaryLongPressEnd] = value;
-    }
-    isPointerAllowed(event) {
-      switch (event.buttons) {
-        case 1:
-        {
-          if (this.onLongPressStart == null && this.onLongPress == null && this.onLongPressMoveUpdate == null && this.onLongPressEnd == null && this.onLongPressUp == null) return false;
-          break;
-        }
-        case 2:
-        {
-          if (this.onSecondaryLongPressStart == null && this.onSecondaryLongPress == null && this.onSecondaryLongPressMoveUpdate == null && this.onSecondaryLongPressEnd == null && this.onSecondaryLongPressUp == null) return false;
-          break;
-        }
-        case 4:
-        {
-          if (this.onTertiaryLongPressStart == null && this.onTertiaryLongPress == null && this.onTertiaryLongPressMoveUpdate == null && this.onTertiaryLongPressEnd == null && this.onTertiaryLongPressUp == null) return false;
-          break;
-        }
-        default:
-        {
-          return false;
-        }
+    verify(s) {
+      if (s == null) dart.nullFailed(I[0], 113, 22, "s");
+      this[_verify](this.month, 1, 12, "month", s);
+      this[_verify](this.hour24, 0, 23, "hour", s);
+      this[_verify](this.minute, 0, 59, "minute", s);
+      this[_verify](this.second, 0, 59, "second", s);
+      this[_verify](this.fractionalSecond, 0, 999, "fractional second", s);
+      let date = this.asDate();
+      let minimumDate = dart.test(this.dateOnly) && date.hour === 1 ? 0 : date.hour;
+      this[_verify](this.hour24, minimumDate, date.hour, "hour", s, date);
+      if (dart.notNull(this.dayOfYear) > 0) {
+        let leapYear = date_computation.isLeapYear(date);
+        let correspondingDay = date_computation.dayOfYear(date.month, date.day, leapYear);
+        this[_verify](this.dayOfYear, correspondingDay, correspondingDay, "dayOfYear", s, date);
+      } else {
+        this[_verify](this.day, date.day, date.day, "day", s, date);
       }
-      return super.isPointerAllowed(event);
+      this[_verify](this.year, date.year, date.year, "year", s, date);
     }
-    didExceedDeadline() {
-      this.resolve(arena.GestureDisposition.accepted);
-      this[_longPressAccepted] = true;
-      super.acceptGesture(dart.nullCheck(this.primaryPointer));
-      this[_checkLongPressStart]();
-    }
-    handlePrimaryPointer(event) {
-      if (!event.synthesized) {
-        if (events.PointerDownEvent.is(event)) {
-          this[_velocityTracker] = new velocity_tracker.VelocityTracker.withKind(event.kind);
-          dart.nullCheck(this[_velocityTracker]).addPosition(event.timeStamp, event.localPosition);
+    [_verify](value, min, max, desc, originalInput, parsed = null) {
+      let t0, t0$;
+      if (value == null) dart.nullFailed(I[0], 147, 20, "value");
+      if (min == null) dart.nullFailed(I[0], 147, 31, "min");
+      if (max == null) dart.nullFailed(I[0], 147, 40, "max");
+      if (desc == null) dart.nullFailed(I[0], 147, 52, "desc");
+      if (originalInput == null) dart.nullFailed(I[0], 147, 65, "originalInput");
+      if (dart.notNull(value) < dart.notNull(min) || dart.notNull(value) > dart.notNull(max)) {
+        let parsedDescription = parsed == null ? "" : " Date parsed as " + dart.str(parsed) + ".";
+        let errorDescription = "Error parsing " + dart.str(originalInput) + ", invalid " + dart.str(desc) + " value: " + dart.str(value) + " in " + dart.str(this[_locale$]) + " with time zone offset " + dart.str((t0$ = (t0 = parsed, t0 == null ? null : t0.timeZoneOffset), t0$ == null ? "unknown" : t0$)) + "." + " Expected value between " + dart.str(min) + " and " + dart.str(max) + "." + parsedDescription + ".";
+        if (dart.notNull(this[_retried]) > 0) {
+          errorDescription = errorDescription + (" Failed after " + dart.str(this[_retried]) + " retries.");
         }
-        if (events.PointerMoveEvent.is(event)) {
-          if (!(this[_velocityTracker] != null)) dart.assertFailed(null, I[0], 383, 16, "_velocityTracker != null");
-          dart.nullCheck(this[_velocityTracker]).addPosition(event.timeStamp, event.localPosition);
-        }
+        dart.throw(new core.FormatException.new(errorDescription));
       }
-      if (events.PointerUpEvent.is(event)) {
-        if (this[_longPressAccepted] === true) {
-          this[_checkLongPressEnd](event);
+    }
+    [_offsetYear](dateTime, offsetYears) {
+      let t7, t6, t5, t4, t3, t2, t1, t0;
+      if (dateTime == null) dart.nullFailed(I[0], 168, 33, "dateTime");
+      if (offsetYears == null) dart.nullFailed(I[0], 168, 47, "offsetYears");
+      t0 = dart.notNull(dateTime.year) + dart.notNull(offsetYears);
+      t1 = dateTime.month;
+      t2 = dateTime.day;
+      t3 = dateTime.hour;
+      t4 = dateTime.minute;
+      t5 = dateTime.second;
+      t6 = dateTime.millisecond;
+      t7 = dateTime.isUtc;
+      return this[_dateTimeConstructor$](t0, t1, t2, t3, t4, t5, t6, t7);
+    }
+    asDate(opts) {
+      let t7, t6, t5, t4, t3, t2, t1, t0, t7$, t6$, t5$, t4$, t3$, t2$, t1$, t0$, t7$0, t6$0, t5$0, t4$0, t3$0, t2$0, t1$0, t0$0;
+      let retries = opts && 'retries' in opts ? opts.retries : 3;
+      if (retries == null) dart.nullFailed(I[0], 181, 24, "retries");
+      if (this[_date] != null) return dart.nullCheck(this[_date]);
+      let preliminaryResult = null;
+      let hasCentury = !dart.test(this[_hasAmbiguousCentury]) || dart.notNull(this.year) < 0 || dart.notNull(this.year) >= 100;
+      if (hasCentury) {
+        preliminaryResult = (t0 = this.year, t1 = this.month, t2 = this.dayOrDayOfYear, t3 = this.hour24, t4 = this.minute, t5 = this.second, t6 = this.fractionalSecond, t7 = this.utc, this[_dateTimeConstructor$](t0, t1, t2, t3, t4, t5, t6, t7));
+      } else {
+        let now = $default.clock.now();
+        if (dart.test(this.utc)) {
+          now = now.toUtc();
+        }
+        let lowerDate = this[_offsetYear](now, -80);
+        let upperDate = this[_offsetYear](now, 100 - 80);
+        let lowerCentury = (dart.notNull(lowerDate.year) / 100)[$truncate]() * 100;
+        let upperCentury = (dart.notNull(upperDate.year) / 100)[$truncate]() * 100;
+        preliminaryResult = (t0$ = upperCentury + dart.notNull(this.year), t1$ = this.month, t2$ = this.dayOrDayOfYear, t3$ = this.hour24, t4$ = this.minute, t5$ = this.second, t6$ = this.fractionalSecond, t7$ = this.utc, this[_dateTimeConstructor$](t0$, t1$, t2$, t3$, t4$, t5$, t6$, t7$));
+        if (dart.notNull(preliminaryResult.compareTo(upperDate)) <= 0) {
+          if (!(dart.notNull(preliminaryResult.compareTo(lowerDate)) > 0)) dart.assertFailed(null, I[0], 217, 16, "preliminaryResult.compareTo(lowerDate) > 0");
         } else {
-          this.resolve(arena.GestureDisposition.rejected);
-        }
-        this[_reset]();
-      } else if (events.PointerCancelEvent.is(event)) {
-        this[_reset]();
-      } else if (events.PointerDownEvent.is(event)) {
-        this[_longPressOrigin] = recognizer.OffsetPair.fromEventPosition(event);
-        this[_initialButtons] = event.buttons;
-      } else if (events.PointerMoveEvent.is(event)) {
-        if (event.buttons !== this[_initialButtons]) {
-          this.resolve(arena.GestureDisposition.rejected);
-          this.stopTrackingPointer(dart.nullCheck(this.primaryPointer));
-        } else if (this[_longPressAccepted]) {
-          this[_checkLongPressMoveUpdate](event);
+          preliminaryResult = (t0$0 = lowerCentury + dart.notNull(this.year), t1$0 = this.month, t2$0 = this.dayOrDayOfYear, t3$0 = this.hour24, t4$0 = this.minute, t5$0 = this.second, t6$0 = this.fractionalSecond, t7$0 = this.utc, this[_dateTimeConstructor$](t0$0, t1$0, t2$0, t3$0, t4$0, t5$0, t6$0, t7$0));
         }
       }
-    }
-    [_checkLongPressStart]() {
-      switch (this[_initialButtons]) {
-        case 1:
-        {
-          if (this.onLongPressStart != null) {
-            let details = new long_press.LongPressStartDetails.new({globalPosition: dart.nullCheck(this[_longPressOrigin]).global, localPosition: dart.nullCheck(this[_longPressOrigin]).local});
-            this.invokeCallback(dart.void, "onLongPressStart", dart.fn(() => dart.nullCheck(this.onLongPressStart)(details), T.VoidTovoid()));
-          }
-          if (this.onLongPress != null) {
-            this.invokeCallback(dart.void, "onLongPress", dart.nullCheck(this.onLongPress));
-          }
-          break;
-        }
-        case 2:
-        {
-          if (this.onSecondaryLongPressStart != null) {
-            let details = new long_press.LongPressStartDetails.new({globalPosition: dart.nullCheck(this[_longPressOrigin]).global, localPosition: dart.nullCheck(this[_longPressOrigin]).local});
-            this.invokeCallback(dart.void, "onSecondaryLongPressStart", dart.fn(() => dart.nullCheck(this.onSecondaryLongPressStart)(details), T.VoidTovoid()));
-          }
-          if (this.onSecondaryLongPress != null) {
-            this.invokeCallback(dart.void, "onSecondaryLongPress", dart.nullCheck(this.onSecondaryLongPress));
-          }
-          break;
-        }
-        case 4:
-        {
-          if (this.onTertiaryLongPressStart != null) {
-            let details = new long_press.LongPressStartDetails.new({globalPosition: dart.nullCheck(this[_longPressOrigin]).global, localPosition: dart.nullCheck(this[_longPressOrigin]).local});
-            this.invokeCallback(dart.void, "onTertiaryLongPressStart", dart.fn(() => dart.nullCheck(this.onTertiaryLongPressStart)(details), T.VoidTovoid()));
-          }
-          if (this.onTertiaryLongPress != null) {
-            this.invokeCallback(dart.void, "onTertiaryLongPress", dart.nullCheck(this.onTertiaryLongPress));
-          }
-          break;
-        }
-        default:
-        {
-          if (!false) dart.assertFailed("Unhandled button " + dart.str(this[_initialButtons]), I[0], 451, 16, "false");
-        }
+      if (dart.test(this.utc) && hasCentury) {
+        this[_date] = preliminaryResult;
+      } else {
+        this[_date] = this[_correctForErrors](preliminaryResult, retries);
       }
+      return dart.nullCheck(this[_date]);
     }
-    [_checkLongPressMoveUpdate](event) {
-      let details = new long_press.LongPressMoveUpdateDetails.new({globalPosition: event.position, localPosition: event.localPosition, offsetFromOrigin: event.position['-'](dart.nullCheck(this[_longPressOrigin]).global), localOffsetFromOrigin: event.localPosition['-'](dart.nullCheck(this[_longPressOrigin]).local)});
-      switch (this[_initialButtons]) {
-        case 1:
-        {
-          if (this.onLongPressMoveUpdate != null) {
-            this.invokeCallback(dart.void, "onLongPressMoveUpdate", dart.fn(() => dart.nullCheck(this.onLongPressMoveUpdate)(details), T.VoidTovoid()));
-          }
-          break;
-        }
-        case 2:
-        {
-          if (this.onSecondaryLongPressMoveUpdate != null) {
-            this.invokeCallback(dart.void, "onSecondaryLongPressMoveUpdate", dart.fn(() => dart.nullCheck(this.onSecondaryLongPressMoveUpdate)(details), T.VoidTovoid()));
-          }
-          break;
-        }
-        case 4:
-        {
-          if (this.onTertiaryLongPressMoveUpdate != null) {
-            this.invokeCallback(dart.void, "onTertiaryLongPressMoveUpdate", dart.fn(() => dart.nullCheck(this.onTertiaryLongPressMoveUpdate)(details), T.VoidTovoid()));
-          }
-          break;
-        }
-        default:
-        {
-          if (!false) dart.assertFailed("Unhandled button " + dart.str(this[_initialButtons]), I[0], 479, 16, "false");
-        }
+    [_correctForErrors](result, retries) {
+      if (result == null) dart.nullFailed(I[0], 234, 39, "result");
+      if (retries == null) dart.nullFailed(I[0], 234, 51, "retries");
+      if (dart.notNull(retries) <= 0) {
+        return result;
       }
-    }
-    [_checkLongPressEnd](event) {
-      let estimate = dart.nullCheck(this[_velocityTracker]).getVelocityEstimate();
-      let velocity = estimate == null ? velocity_tracker.Velocity.zero : new velocity_tracker.Velocity.new({pixelsPerSecond: estimate.pixelsPerSecond});
-      let details = new long_press.LongPressEndDetails.new({globalPosition: event.position, localPosition: event.localPosition, velocity: velocity});
-      this[_velocityTracker] = null;
-      switch (this[_initialButtons]) {
-        case 1:
-        {
-          if (this.onLongPressEnd != null) {
-            this.invokeCallback(dart.void, "onLongPressEnd", dart.fn(() => dart.nullCheck(this.onLongPressEnd)(details), T.VoidTovoid()));
-          }
-          if (this.onLongPressUp != null) {
-            this.invokeCallback(dart.void, "onLongPressUp", dart.nullCheck(this.onLongPressUp));
-          }
-          break;
-        }
-        case 2:
-        {
-          if (this.onSecondaryLongPressEnd != null) {
-            this.invokeCallback(dart.void, "onSecondaryLongPressEnd", dart.fn(() => dart.nullCheck(this.onSecondaryLongPressEnd)(details), T.VoidTovoid()));
-          }
-          if (this.onSecondaryLongPressUp != null) {
-            this.invokeCallback(dart.void, "onSecondaryLongPressUp", dart.nullCheck(this.onSecondaryLongPressUp));
-          }
-          break;
-        }
-        case 4:
-        {
-          if (this.onTertiaryLongPressEnd != null) {
-            this.invokeCallback(dart.void, "onTertiaryLongPressEnd", dart.fn(() => dart.nullCheck(this.onTertiaryLongPressEnd)(details), T.VoidTovoid()));
-          }
-          if (this.onTertiaryLongPressUp != null) {
-            this.invokeCallback(dart.void, "onTertiaryLongPressUp", dart.nullCheck(this.onTertiaryLongPressUp));
-          }
-          break;
-        }
-        default:
-        {
-          if (!false) dart.assertFailed("Unhandled button " + dart.str(this[_initialButtons]), I[0], 521, 16, "false");
-        }
+      let leapYear = date_computation.isLeapYear(result);
+      let resultDayOfYear = date_computation.dayOfYear(result.month, result.day, leapYear);
+      if (!dart.test(this.utc) && dart.test(result.isUtc) && (result.hour != this.hour24 || result.day != resultDayOfYear || !dart.test(new core.DateTime.now().isUtc))) {
+        this[_retried] = dart.notNull(this[_retried]) + 1;
+        return this.asDate({retries: dart.notNull(retries) - 1});
       }
-    }
-    [_reset]() {
-      this[_longPressAccepted] = false;
-      this[_longPressOrigin] = null;
-      this[_initialButtons] = null;
-      this[_velocityTracker] = null;
-    }
-    resolve(disposition) {
-      if (this[_longPressAccepted] && disposition === arena.GestureDisposition.rejected) {
-        this[_reset]();
+      if (dart.test(this.dateOnly) && result.hour !== 0) {
+        let tryAgain = this.asDate({retries: dart.notNull(retries) - 1});
+        if (!dart.equals(tryAgain, result)) {
+          return tryAgain;
+        }
+        let expectedDayOfYear = this.dayOfYear === 0 ? date_computation.dayOfYear(this.month, this.day, leapYear) : this.dayOfYear;
+        let daysPrevious = dart.notNull(expectedDayOfYear) - dart.notNull(resultDayOfYear);
+        let offset = daysPrevious * 24 - dart.notNull(result.hour);
+        let adjusted = result.add(new core.Duration.new({hours: offset}));
+        if (adjusted.hour === 0) {
+          return adjusted;
+        }
+        let adjustedDayOfYear = date_computation.dayOfYear(adjusted.month, adjusted.day, leapYear);
+        if (adjustedDayOfYear != expectedDayOfYear) {
+          return result;
+        }
+        return adjusted;
       }
-      super.resolve(disposition);
-    }
-    acceptGesture(pointer) {
-    }
-    get debugDescription() {
-      return "long press";
+      return result;
     }
   };
-  (long_press.LongPressGestureRecognizer.new = function(opts) {
-    let t0;
-    let duration = opts && 'duration' in opts ? opts.duration : null;
-    let postAcceptSlopTolerance = opts && 'postAcceptSlopTolerance' in opts ? opts.postAcceptSlopTolerance : null;
-    let kind = opts && 'kind' in opts ? opts.kind : null;
-    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
-    this[_longPressAccepted] = false;
-    this[_longPressOrigin] = null;
-    this[_initialButtons] = null;
-    this[onLongPress] = null;
-    this[onLongPressStart] = null;
-    this[onLongPressMoveUpdate] = null;
-    this[onLongPressUp] = null;
-    this[onLongPressEnd] = null;
-    this[onSecondaryLongPress] = null;
-    this[onSecondaryLongPressStart] = null;
-    this[onSecondaryLongPressMoveUpdate] = null;
-    this[onSecondaryLongPressUp] = null;
-    this[onSecondaryLongPressEnd] = null;
-    this[onTertiaryLongPress] = null;
-    this[onTertiaryLongPressStart] = null;
-    this[onTertiaryLongPressMoveUpdate] = null;
-    this[onTertiaryLongPressUp] = null;
-    this[onTertiaryLongPressEnd] = null;
-    this[_velocityTracker] = null;
-    long_press.LongPressGestureRecognizer.__proto__.new.call(this, {deadline: (t0 = duration, t0 == null ? constants.kLongPressTimeout : t0), postAcceptSlopTolerance: postAcceptSlopTolerance, kind: kind, debugOwner: debugOwner});
+  (date_builder.DateBuilder.new = function(_locale, _dateTimeConstructor) {
+    if (_locale == null) dart.nullFailed(I[0], 62, 20, "_locale");
+    if (_dateTimeConstructor == null) dart.nullFailed(I[0], 62, 34, "_dateTimeConstructor");
+    this[year] = 1970;
+    this[month] = 1;
+    this[day] = 1;
+    this[dayOfYear] = 0;
+    this[hour] = 0;
+    this[minute] = 0;
+    this[second] = 0;
+    this[fractionalSecond] = 0;
+    this[pm] = false;
+    this[utc] = false;
+    this[_hasAmbiguousCentury] = false;
+    this[_date] = null;
+    this[_retried] = 0;
+    this[dateOnly] = false;
+    this[_locale$] = _locale;
+    this[_dateTimeConstructor$] = _dateTimeConstructor;
     ;
-  }).prototype = long_press.LongPressGestureRecognizer.prototype;
-  dart.addTypeTests(long_press.LongPressGestureRecognizer);
-  dart.addTypeCaches(long_press.LongPressGestureRecognizer);
-  dart.setMethodSignature(long_press.LongPressGestureRecognizer, () => ({
-    __proto__: dart.getMethods(long_press.LongPressGestureRecognizer.__proto__),
-    handlePrimaryPointer: dart.fnType(dart.void, [events.PointerEvent]),
-    [_checkLongPressStart]: dart.fnType(dart.void, []),
-    [_checkLongPressMoveUpdate]: dart.fnType(dart.void, [events.PointerEvent]),
-    [_checkLongPressEnd]: dart.fnType(dart.void, [events.PointerEvent]),
-    [_reset]: dart.fnType(dart.void, [])
+  }).prototype = date_builder.DateBuilder.prototype;
+  dart.addTypeTests(date_builder.DateBuilder);
+  dart.addTypeCaches(date_builder.DateBuilder);
+  dart.setMethodSignature(date_builder.DateBuilder, () => ({
+    __proto__: dart.getMethods(date_builder.DateBuilder.__proto__),
+    setYear: dart.fnType(dart.void, [core.int]),
+    setHasAmbiguousCentury: dart.fnType(dart.void, [core.bool]),
+    setMonth: dart.fnType(dart.void, [core.int]),
+    setDay: dart.fnType(dart.void, [core.int]),
+    setDayOfYear: dart.fnType(dart.void, [core.int]),
+    setHour: dart.fnType(dart.void, [core.int]),
+    setMinute: dart.fnType(dart.void, [core.int]),
+    setSecond: dart.fnType(dart.void, [core.int]),
+    setFractionalSecond: dart.fnType(dart.void, [core.int]),
+    verify: dart.fnType(dart.void, [core.String]),
+    [_verify]: dart.fnType(dart.void, [core.int, core.int, core.int, core.String, core.String], [dart.nullable(core.DateTime)]),
+    [_offsetYear]: dart.fnType(core.DateTime, [core.DateTime, core.int]),
+    asDate: dart.fnType(core.DateTime, [], {retries: core.int}, {}),
+    [_correctForErrors]: dart.fnType(core.DateTime, [core.DateTime, core.int])
   }));
-  dart.setGetterSignature(long_press.LongPressGestureRecognizer, () => ({
-    __proto__: dart.getGetters(long_press.LongPressGestureRecognizer.__proto__),
-    debugDescription: core.String
+  dart.setGetterSignature(date_builder.DateBuilder, () => ({
+    __proto__: dart.getGetters(date_builder.DateBuilder.__proto__),
+    dayOrDayOfYear: core.int,
+    hour24: core.int
   }));
-  dart.setLibraryUri(long_press.LongPressGestureRecognizer, I[1]);
-  dart.setFieldSignature(long_press.LongPressGestureRecognizer, () => ({
-    __proto__: dart.getFields(long_press.LongPressGestureRecognizer.__proto__),
-    [_longPressAccepted]: dart.fieldType(core.bool),
-    [_longPressOrigin]: dart.fieldType(dart.nullable(recognizer.OffsetPair)),
-    [_initialButtons]: dart.fieldType(dart.nullable(core.int)),
-    onLongPress: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onLongPressStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressStartDetails]))),
-    onLongPressMoveUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressMoveUpdateDetails]))),
-    onLongPressUp: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onLongPressEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressEndDetails]))),
-    onSecondaryLongPress: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onSecondaryLongPressStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressStartDetails]))),
-    onSecondaryLongPressMoveUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressMoveUpdateDetails]))),
-    onSecondaryLongPressUp: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onSecondaryLongPressEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressEndDetails]))),
-    onTertiaryLongPress: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onTertiaryLongPressStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressStartDetails]))),
-    onTertiaryLongPressMoveUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressMoveUpdateDetails]))),
-    onTertiaryLongPressUp: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onTertiaryLongPressEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressEndDetails]))),
-    [_velocityTracker]: dart.fieldType(dart.nullable(velocity_tracker.VelocityTracker))
+  dart.setLibraryUri(date_builder.DateBuilder, I[1]);
+  dart.setFieldSignature(date_builder.DateBuilder, () => ({
+    __proto__: dart.getFields(date_builder.DateBuilder.__proto__),
+    year: dart.fieldType(core.int),
+    month: dart.fieldType(core.int),
+    day: dart.fieldType(core.int),
+    dayOfYear: dart.fieldType(core.int),
+    hour: dart.fieldType(core.int),
+    minute: dart.fieldType(core.int),
+    second: dart.fieldType(core.int),
+    fractionalSecond: dart.fieldType(core.int),
+    pm: dart.fieldType(core.bool),
+    utc: dart.fieldType(core.bool),
+    [_hasAmbiguousCentury]: dart.fieldType(core.bool),
+    [_locale$]: dart.finalFieldType(core.String),
+    [_date]: dart.fieldType(dart.nullable(core.DateTime)),
+    [_retried]: dart.fieldType(core.int),
+    dateOnly: dart.fieldType(core.bool),
+    [_dateTimeConstructor$]: dart.finalFieldType(dart.fnType(core.DateTime, [core.int, core.int, core.int, core.int, core.int, core.int, core.int, core.bool]))
   }));
-  dart.trackLibraries("packages/flutter/src/gestures/long_press.dart", {
-    "package:flutter/src/gestures/long_press.dart": long_press
+  dart.trackLibraries("packages/intl/src/intl/date_builder.dart", {
+    "package:intl/src/intl/date_builder.dart": date_builder
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["long_press.dart"],"names":[],"mappings":"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","file":"../../../../../../../../E:/packages/flutter/src/gestures/long_press.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["date_builder.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/intl/src/intl/date_builder.dart.lib.js"}');
   // Exports:
   return {
-    src__gestures__long_press: long_press
+    src__intl__date_builder: date_builder
   };
 }));
 
-//# sourceMappingURL=long_press.dart.lib.js.map
+//# sourceMappingURL=date_builder.dart.lib.js.map
